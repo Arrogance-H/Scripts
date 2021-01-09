@@ -35,6 +35,17 @@ jobs:
             YOUTH_READBODY2: ${{ secrets.YOUTH_READBODY2 }}  #非必须 账号2 body1
             YOUTH_REDBODY2: ${{ secrets.YOUTH_REDBODY2 }}  #非必须 账号2 body1
             YOUTH_READTIMEBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}  #非必须 账号2 body1
+            YOUTH_WITHDRAWBODY2: ${{ secrets.YOUTH_WITHDRAWBODY2 }}  #必须 账号1
+            YOUTH_HEADER3: ${{ secrets.YOUTH_HEADER3 }}  #必须 账号1 body1
+            YOUTH_READBODY3: ${{ secrets.YOUTH_READBODY3 }}  #必须 账号1 body1
+            YOUTH_REDBODY3: ${{ secrets.YOUTH_REDBODY3 }}  #必须 账号1 body1
+            YOUTH_READTIMEBODY3: ${{ secrets.YOUTH_READTIMEBODY3 }}  #必须 账号1 body1
+            YOUTH_WITHDRAWBODY3: ${{ secrets.YOUTH_WITHDRAWBODY3 }}  #必须 账号1
+            YOUTH_HEADER4: ${{ secrets.YOUTH_HEADER4 }}  #非必须 账号2 body1
+            YOUTH_READBODY4: ${{ secrets.YOUTH_READBODY4 }}  #非必须 账号2 body1
+            YOUTH_REDBODY4: ${{ secrets.YOUTH_REDBODY4 }}  #非必须 账号2 body1
+            YOUTH_READTIMEBODY4: ${{ secrets.YOUTH_READTIMEBODY4 }}  #非必须 账号2 body1
+            YOUTH_WITHDRAWBODY4: ${{ secrets.YOUTH_WITHDRAWBODY4 }}  #必须 账号1
             BARK: ${{ secrets.BARK }}  #非必须 bark通知
             SCKEY: ${{ secrets.SCKEY }}  #非必须 server酱通知
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}  #非必须 tg机器人token
