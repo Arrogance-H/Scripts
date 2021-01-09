@@ -18,7 +18,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
 
 # 通知服务
-BARK = 'c5jw7jPB9XDxhLPYbtzTgG'                                                                 # bark服务,自行搜索; secrets可填;
+BARK = ''                                                                 # bark服务,自行搜索; secrets可填;
 SCKEY = ''                                                                # Server酱的SCKEY; secrets可填
 TG_BOT_TOKEN = ''                                                         # tg机器人的TG_BOT_TOKEN; secrets可填
 TG_USER_ID = ''                                                           # tg机器人的TG_USER_ID; secrets可填
