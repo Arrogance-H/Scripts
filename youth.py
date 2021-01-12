@@ -15,32 +15,32 @@ from datetime import datetime, timezone, timedelta
 # YOUTH_HEADER 为对象, 其他参数为字符串，自动提现需要自己抓包
 # 选择微信提现30元，立即兑换，在请求包中找到withdraw2的请求，拷贝请求body类型 p=****** 的字符串，放入下面对应参数即可
 cookies1 = {
-  'YOUTH_HEADER': {},
-  'YOUTH_READBODY': '',
-  'YOUTH_REDBODY': '',
-  'YOUTH_READTIMEBODY': '',
-  'YOUTH_WITHDRAWBODY': ''
+  'YOUTH_HEADER1': {},
+  'YOUTH_READBODY1': '',
+  'YOUTH_REDBODY1': '',
+  'YOUTH_READTIMEBODY1': '',
+  'YOUTH_WITHDRAWBODY1': ''
 }
 cookies2 = {
-  'YOUTH_HEADER': {},
-  'YOUTH_READBODY': '',
-  'YOUTH_REDBODY': '',
-  'YOUTH_READTIMEBODY': '',
-  'YOUTH_WITHDRAWBODY': ''
+  'YOUTH_HEADER2': {},
+  'YOUTH_READBODY2': '',
+  'YOUTH_REDBODY2': '',
+  'YOUTH_READTIMEBODY2': '',
+  'YOUTH_WITHDRAWBODY2': ''
 }
 cookies3 = {
-  'YOUTH_HEADER': {},
-  'YOUTH_READBODY': '',
-  'YOUTH_REDBODY': '',
-  'YOUTH_READTIMEBODY': '',
-  'YOUTH_WITHDRAWBODY': ''
+  'YOUTH_HEADER3': {},
+  'YOUTH_READBODY3': '',
+  'YOUTH_REDBODY3': '',
+  'YOUTH_READTIMEBODY3': '',
+  'YOUTH_WITHDRAWBODY3': ''
 }
 cookies4 = {
-  'YOUTH_HEADER': {},
-  'YOUTH_READBODY': '',
-  'YOUTH_REDBODY': '',
-  'YOUTH_READTIMEBODY': '',
-  'YOUTH_WITHDRAWBODY': ''
+  'YOUTH_HEADER4': {},
+  'YOUTH_READBODY4': '',
+  'YOUTH_REDBODY4': '',
+  'YOUTH_READTIMEBODY4': '',
+  'YOUTH_WITHDRAWBODY4': ''
 }
 
 COOKIELIST = [cookies1,cookies2,cookies3,cookies4]  # 多账号准备
