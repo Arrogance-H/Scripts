@@ -21,9 +21,27 @@ cookies1 = {
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': ''
 }
-cookies2 = {}
-cookies3 = {}
-cookies4 = {}
+cookies2 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
+cookies3 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
+cookies4 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
 
 COOKIELIST = [cookies1,cookies2,cookies3,cookie4]  # 多账号准备
 
