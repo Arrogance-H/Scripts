@@ -31,12 +31,12 @@ jobs:
       - name: npm install
         if: env.QCZJ_GetUserInfoHEADER
         run: |
-          cd ~/QCZJSPEED
+          cd ~/Scripts
           npm install
       - name: '运行 【汽车之家极速版】'
         if: env.QCZJ_GetUserInfoHEADER
         run: |
-          cd ~/QCZJSPEED
+          cd ~/Scripts
           node qczjspeed.js
         env:
           
