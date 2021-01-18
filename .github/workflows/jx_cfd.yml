@@ -24,7 +24,7 @@ jobs:
         if: env.JD_COOKIE
         run: |
           npm install
-      - name: '运行 【中青看点】'
+      - name: '运行 【财富岛】'
         if: env.JD_COOKIE
         run: |
           node jx_cfd.js
