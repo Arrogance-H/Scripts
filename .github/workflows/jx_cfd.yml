@@ -6,17 +6,16 @@ on:
      - cron: '30 * * * *'
   watch:
     types: started
+
 jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         JD_COOKIE: ${{ secrets.JD_COOKIE }}
-        
     steps:
       - name: Checkout
-        run: |
-          git clone https://github.com/ziye12/JavaScript.git ~/JavaScript
+        uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -24,15 +23,13 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/JavaScript
           npm install
-      - name: '运行 【财富岛】'
+      - name: '运行 【中青看点】'
         if: env.JD_COOKIE
         run: |
-          cd ~/JavaScript
           node jx_cfd.js
         env:
-          
+          YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
