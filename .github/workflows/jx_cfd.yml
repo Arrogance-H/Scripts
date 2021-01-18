@@ -24,13 +24,13 @@ jobs:
       - name: npm install
         if: env.JD_COOKIE
         run: |
-          cd ~/Scripts
+          cd ~/JavaScript
           npm install
       - name: '运行 【财富岛】'
         if: env.JD_COOKIE
         run: |
-          cd ~/Scripts
-          node Task/jx_cfd.js
+          cd ~/JavaScript
+          node jx_cfd.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
