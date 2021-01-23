@@ -3,8 +3,9 @@ name: 中青阅读body
 on:
   schedule:
     - cron: '0 */2 * * *'
+  workflow_dispatch:
   watch:
-    types: [started]
+    types: started
 jobs:
   build:
     runs-on: ubuntu-latest
