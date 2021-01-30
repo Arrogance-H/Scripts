@@ -34,7 +34,7 @@ jobs:
           npm install
       - name: '运行 【快看点】'
         run: |
-          node jrtt.js
+          node kdd.js
         env:
           KKDHEADER: ${{ secrets.KDDHEADER }}
           KDDCOOKIE: ${{ secrets.KDDCOOKIE }}
