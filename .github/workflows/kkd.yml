@@ -1,4 +1,4 @@
-name: 中青看点
+name: 快看点
 
 on:
   workflow_dispatch:
@@ -26,10 +26,10 @@ jobs:
         if: env.KDDHEADER
         run: |
           npm install
-      - name: '运行 【中青看点】'
+      - name: '运行 【快看点】'
         if: env.KDDHEADER
         run: |
-          node kdd.js.js
+          node kdd.js
         env:
           YOUTH_NOTIFY_CONTROL: ${{ secrets.YOUTH_NOTIFY_CONTROL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
