@@ -21,9 +21,28 @@ cookies1 = {
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': ''
 }
-cookies2 = {}
-
-COOKIELIST = [cookies1,]  # 多账号准备
+cookies2 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
+cookies3 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
+cookies4 = {
+  'YOUTH_HEADER': {},
+  'YOUTH_READBODY': '',
+  'YOUTH_REDBODY': '',
+  'YOUTH_READTIMEBODY': '',
+  'YOUTH_WITHDRAWBODY': ''
+}
+COOKIELIST = [cookies1,cookies2,cookies3,cookies4]  # 多账号准备
 
 # ac读取环境变量
 if "YOUTH_HEADER1" in os.environ:
