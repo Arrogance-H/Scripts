@@ -631,19 +631,18 @@ def run():
     open_box_res = openBox(headers=headers)
     if open_box_res:
       content += f'\n【开启宝箱】：+{open_box_res["score"]}青豆 下次奖励{open_box_res["time"] / 60}分钟'
-    watch_ad_video_res = watchAdVideo(headers=headers)
     """
+    watch_ad_video_res = watchAdVideo(headers=headers)
     if watch_ad_video_res:
       content += f'\n【观看视频】：+{watch_ad_video_res["score"]}个青豆'
     watch_game_video_res = watchGameVideo(body=readBody)
-    
     if watch_game_video_res:
       content += f'\n【激励视频】：{watch_game_video_res["score"]}个青豆'
     article_red_res = articleRed(body=redBody)
     if article_red_res:
       content += f'\n【惊喜红包】：+{article_red_res["score"]}个青豆'
-    read_time_res = readTime(body=readTimeBody)
     """
+    read_time_res = readTime(body=readTimeBody)
     if read_time_res:
       content += f'\n【阅读时长】：共计{read_time_res["time"] // 60}分钟'
     if (hour >= 6 and hour <= 8) or (hour >= 11 and hour <= 13) or (hour >= 19 and hour <= 21):
