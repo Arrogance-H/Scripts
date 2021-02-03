@@ -319,13 +319,13 @@ def friendSign(headers, uid):
   except:
     print(traceback.format_exc())
     return
-
+"""
 def watchAdVideo(headers):
-  """
+  
   看广告视频
   :param headers:
   :return:
-  """
+  
   time.sleep(0.3)
   url = 'https://kd.youth.cn/taskCenter/getAdVideoReward'
   headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
@@ -340,7 +340,7 @@ def watchAdVideo(headers):
   except:
     print(traceback.format_exc())
     return
-"""
+
 def watchGameVideo(body):
   
   激励视频
@@ -635,10 +635,11 @@ def run():
     if open_box_res:
       content += f'\n【开启宝箱】：+{open_box_res["score"]}青豆 下次奖励{open_box_res["time"] / 60}分钟'
     watch_ad_video_res = watchAdVideo(headers=headers)
+    """
     if watch_ad_video_res:
       content += f'\n【观看视频】：+{watch_ad_video_res["score"]}个青豆'
     watch_game_video_res = watchGameVideo(body=readBody)
-    """
+    
     if watch_game_video_res:
       content += f'\n【激励视频】：{watch_game_video_res["score"]}个青豆'
     article_red_res = articleRed(body=redBody)
