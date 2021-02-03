@@ -340,13 +340,13 @@ def watchAdVideo(headers):
   except:
     print(traceback.format_exc())
     return
-
+"""
 def watchGameVideo(body):
-  """
+  
   激励视频
   :param headers:
   :return:
-  """
+  
   time.sleep(0.3)
   url = 'https://ios.baertt.com/v5/Game/GameVideoReward.json'
   headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
@@ -361,7 +361,8 @@ def watchGameVideo(body):
   except:
     print(traceback.format_exc())
     return
-
+"""
+  
 def visitReward(body):
   """
   回访奖励
@@ -386,12 +387,13 @@ def visitReward(body):
     print(traceback.format_exc())
     return
 
+"""
 def articleRed(body):
-  """
+  
   惊喜红包
   :param headers:
   :return:
-  """
+  
   time.sleep(0.3)
   url = 'https://ios.baertt.com/v5/article/red_packet.json'
   headers = {
@@ -409,6 +411,7 @@ def articleRed(body):
   except:
     print(traceback.format_exc())
     return
+"""
 
 def readTime(body):
   """
