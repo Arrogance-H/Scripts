@@ -30,14 +30,46 @@ hostname = bububao.duoshoutuan.com,
 
 const $ = new Env('步步寶')
 let notice = ''
-let CookieVal = $.getdata('bbb_ck')
+//let CookieVal = $.getdata('bbb_ck')
+let CookieValArr = []
 
+if (isGetCookie = typeof $request !==`undefined`) {
+   GetCookie();
+   $.done()
+}
+
+if ($.isNode()) {
+  if (process.env.BBBCK && process.env.BBBCK.indexOf('#') > -1) {
+   bbb = process.env.BBBCK.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.BBBCK && process.env.BBBCK.indexOf('\n') > -1) {
+   bbb = process.env.BBBCK.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   bbb = process.env.BBBCK.split()
+  };
+  Object.keys(bbbck).forEach((item) => {
+        if (bbbck[item]) {
+          CookieValArr.push(bbbck[item])
+        }
+    });
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ } else {
+    CookieValArr.push($.getdata('bbb_ck'))
+}
+
+
+
+
+/*
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 }
 
-
+*/
 
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 
@@ -96,7 +128,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let userInfo ={
     url: 'https://bububao.duoshoutuan.com/user/profile',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(userInfo,async(error, response, data) =>{
      const userinfo = JSON.parse(data)
@@ -117,7 +149,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let signin ={
     url: `https://bububao.duoshoutuan.com/user/sign`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(signin,async(error, response, data) =>{
 $.log('\n🔔開始签到\n')
@@ -139,7 +171,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let signdouble ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${signInStr}&tid=2&pos=1&`,
 }
    $.post(signdouble,async(error, response, data) =>{
@@ -160,7 +192,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let zaowandkinfo ={
     url: `https://bububao.duoshoutuan.com/mini/dk_info`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(zaowandkinfo,async(error, response, data) =>{
      const zwdkinfo = JSON.parse(data)
@@ -182,7 +214,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let zaowandk ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=3&c_type=1&`,
 }
    $.post(zaowandk,async(error, response, data) =>{
@@ -202,7 +234,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let dkclick ={
     url: `https://bububao.duoshoutuan.com/mini/dk_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `now_time=${nowTime}&`,
 }
    $.post(dkclick,async(error, response, data) =>{
@@ -226,7 +258,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let gualist ={
     url: `https://bububao.duoshoutuan.com/gua/gualist?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(gualist,async(error, response, data) =>{
 $.log('\n🔔開始查詢刮刮卡ID\n')
@@ -254,7 +286,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let guadet ={
     url: `https://bububao.duoshoutuan.com/gua/guadet?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `gid=${GID}&`
 }
    $.post(guadet,async(error, response, data) =>{
@@ -278,7 +310,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let guapost ={
     url: `https://bububao.duoshoutuan.com/gua/guapost?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `sign=${SIGN}&gid=${GID}&glid=${GLID}&`
 }
    $.post(guapost,async(error, response, data) =>{
@@ -301,7 +333,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let guadouble ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${guaStr}&tid=6&pos=1&`,
 }
    $.post(guadouble,async(error, response, data) =>{
@@ -326,7 +358,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkwaternum ={
     url: `https://bububao.duoshoutuan.com/mini/water_info`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(checkwaternum,async(error, response, data) =>{
 $.log('\n🔔開始查詢喝水杯數\n')
@@ -354,7 +386,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checksp ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=2&c_type=1&`,
 }
    $.post(checksp,async(error, response, data) =>{
@@ -373,7 +405,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let watersp ={
     url: `https://bububao.duoshoutuan.com/mini/water_sp`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `day_num=${waterNum}&`,
 }
    $.post(watersp,async(error, response, data) =>{
@@ -393,7 +425,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let waterclick ={
     url: `https://bububao.duoshoutuan.com/mini/water_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `day_num=0${waterNum}&`,
 }
    $.post(waterclick,async(error, response, data) =>{
@@ -415,7 +447,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let sleepstatus ={
     url: `https://bububao.duoshoutuan.com/mini/sleep_info`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(sleepstatus,async(error, response, data) =>{
 $.log('\n🔔開始查詢睡覺狀態\n')
@@ -455,7 +487,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let sleepstart ={
     url: `https://bububao.duoshoutuan.com/mini/sleep_start`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(sleepstart,async(error, response, data) =>{
      const startsleep = JSON.parse(data)
@@ -475,7 +507,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let sleepend ={
     url: `https://bububao.duoshoutuan.com/mini/sleep_end`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(sleepend,async(error, response, data) =>{
      const endsleep = JSON.parse(data)
@@ -496,7 +528,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let sleepdone ={
     url: `https://bububao.duoshoutuan.com/mini/sleep_done`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `taskid=${sleepId}&nonce_str=${sleepStr}&`
 }
    $.post(sleepdone,async(error, response, data) =>{
@@ -517,8 +549,8 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let clicktaskstatus ={
     url: `https://bububao.duoshoutuan.com/user/renwu`,
-    headers: JSON.parse(CookieVal),
-    body: `idfa=${JSON.parse(CookieVal)['idfa']}&`,
+    headers: JSON.parse(bbb),
+    body: `idfa=${JSON.parse(bbb)['idfa']}&`,
 }
    $.post(clicktaskstatus,async(error, response, data) =>{
      const clicktask = JSON.parse(data)
@@ -538,8 +570,8 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let watchtaskstatus ={
     url: `https://bububao.duoshoutuan.com/user/renwu`,
-    headers: JSON.parse(CookieVal),
-    body: `idfa=${JSON.parse(CookieVal)['idfa']}&`,
+    headers: JSON.parse(bbb),
+    body: `idfa=${JSON.parse(bbb)['idfa']}&`,
 }
    $.post(watchtaskstatus,async(error, response, data) =>{
      const watchtask = JSON.parse(data)
@@ -563,7 +595,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkdailywatchadid ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=0&c_type=1&`,
 }
    $.post(checkdailywatchadid,async(error, response, data) =>{
@@ -587,7 +619,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let dailywatchad ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${dailyWatchStr}&tid=9&pos=1&`,
 }
    $.post(dailywatchad,async(error, response, data) =>{
@@ -617,7 +649,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkdailyclickadid ={
     url: `https://bububao.duoshoutuan.com/user/admobile_show`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(checkdailyclickadid,async(error, response, data) =>{
 $.log('\n🔔開始查詢每日廣告ID\n')
@@ -640,7 +672,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkdailyclickad ={
     url: `https://bububao.duoshoutuan.com/user/admobile_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `ad_id=${dailyClickAdId}&`,
 }
    $.post(checkdailyclickad,async(error, response, data) =>{
@@ -663,7 +695,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let dailyclickad ={
     url: `https://bububao.duoshoutuan.com/user/admobile_done`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${dailyClickStr}&ad_id=${dailyClickAdId}&`,
 }
    $.post(dailyclickad,async(error, response, data) =>{
@@ -688,7 +720,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkhomejin ={
     url: 'https://bububao.duoshoutuan.com/user/home',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(checkhomejin,async(error, response, data) =>{
      const checkhomejb = JSON.parse(data)
@@ -740,7 +772,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let homejin ={
     url: 'https://bububao.duoshoutuan.com/user/homejin',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(homejin,async(error, response, data) =>{
      const homejb = JSON.parse(data)
@@ -766,7 +798,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let homejincallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${homeJinStr}&tid=21&pos=1&`,
 }
    $.post(homejincallback,async(error, response, data) =>{
@@ -788,7 +820,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkredbagid ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=0&c_type=2&`,
 }
    $.post(checkredbagid,async(error, response, data) =>{
@@ -810,7 +842,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let redbagcallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${redBagStr}&tid=17&pos=1&`,
 }
    $.post(redbagcallback,async(error, response, data) =>{
@@ -833,7 +865,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkgoldeggid ={
     url: `https://bububao.duoshoutuan.com/user/jindan_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(checkgoldeggid,async(error, response, data) =>{
      const goldeggid = JSON.parse(data)
@@ -859,7 +891,7 @@ return new Promise((resolve, reject) => {
   let timestamp= Date.parse(new Date())/1000;
   let goldeggdone ={
     url: `https://bububao.duoshoutuan.com/user/jindan_done`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `taskid=${goldEggId}&clicktime=${timestamp}&donetime=${timestamp}+1000&nonce_str=${goldEggStr}&`
 }
    $.post(goldeggdone,async(error, response, data) =>{
@@ -882,7 +914,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let goldeggcallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${goldEggStr}&tid=5&pos=1&`,
 }
    $.post(goldeggcallback,async(error, response, data) =>{
@@ -905,7 +937,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let helpstatus ={
     url: `https://bububao.duoshoutuan.com/user/help_index`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(helpstatus,async(error, response, data) =>{
      const help = JSON.parse(data)
@@ -927,7 +959,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkcode ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=5&c_type=1&`,
 }
    $.post(checkcode,async(error, response, data) =>{
@@ -949,7 +981,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let helpclick ={
     url: `https://bububao.duoshoutuan.com/user/help_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${nonce_str}`,
 }
    $.post(helpclick,async(error, response, data) =>{
@@ -974,7 +1006,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let callback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${nonce_str}&tid=22&pos=1&`,
 }
    $.post(callback,async(error, response, data) =>{
@@ -997,7 +1029,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let getnewsid ={
     url: 'https://bububao.duoshoutuan.com/user/news',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `type_class=1&`
 }
    $.post(getnewsid,async(error, response, data) =>{
@@ -1025,7 +1057,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let autoread ={
     url: 'https://bububao.duoshoutuan.com/user/donenews',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${newsStr}& `,
 }
    $.post(autoread,async(error, response, data) =>{
@@ -1046,7 +1078,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let lucknum ={
     url: `https://bububao.duoshoutuan.com/user/lucky`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(lucknum,async(error, response, data) =>{
      const num = JSON.parse(data)
@@ -1076,7 +1108,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let luckclick ={
     url: `https://bububao.duoshoutuan.com/user/lucky_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(luckclick,async(error, response, data) =>{
      const lucky = JSON.parse(data)
@@ -1103,7 +1135,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let luckycallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${luckyStr}&tid=16&pos=1&`,
 }
    $.post(luckycallback,async(error, response, data) =>{
@@ -1126,7 +1158,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let luckybox ={
     url: `https://bububao.duoshoutuan.com/user/lucky_box`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `box=${getBoxId()}&`,
 }
 //$.log('\nlockyboxBODY:'+luckybox.body+'\n')
@@ -1152,7 +1184,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let luckyboxcallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${luckyBoxStr}&tid=16&pos=1&`,
 }
    $.post(luckyboxcallback,async(error, response, data) =>{
@@ -1176,7 +1208,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let getquestionid ={
     url: `https://bububao.duoshoutuan.com/mini/cy_info`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(getquestionid,async(error, response, data) =>{
      const question = JSON.parse(data)
@@ -1206,7 +1238,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checksp ={
     url: `https://bububao.duoshoutuan.com/user/chuansj`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_pos=1&c_type=1&`,
 }
    $.post(checksp,async(error, response, data) =>{
@@ -1227,7 +1259,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let cysp ={
     url: `https://bububao.duoshoutuan.com/mini/cy_sp`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `day_num=${spId}&`,
 }
    $.post(cysp,async(error, response, data) =>{
@@ -1247,7 +1279,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let answerque ={
     url: `https://bububao.duoshoutuan.com/mini/cy_click`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `cy_id=${questionId}&site=${questionSite}&`,
 }
    $.post(answerque,async(error, response, data) =>{
@@ -1273,7 +1305,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let answerquecallback ={
     url: `https://bububao.duoshoutuan.com/you/callback`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `nonce_str=${answerStr}&tid=18&pos=1&`,
 }
    $.post(answerquecallback,async(error, response, data) =>{
@@ -1297,7 +1329,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let cashcheck ={
     url: 'https://bububao.duoshoutuan.com/user/profile',
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
 }
    $.post(cashcheck,async(error, response, data) =>{
      const cash = JSON.parse(data)
@@ -1323,7 +1355,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let withdraw ={
     url: `https://bububao.duoshoutuan.com/user/tixian?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `tx=${tip}&`,
 }
    $.post(withdraw,async(error, response, data) =>{
@@ -1350,7 +1382,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let checkh5id ={
     url: `https://bububao.duoshoutuan.com/user/h5_list?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `page=1&page_limit=50&`,
 }
    $.post(checkh5id,async(error, response, data) =>{
@@ -1373,7 +1405,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let dotaskh5 ={
     url: `https://bububao.duoshoutuan.com/user/h5_news?`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `mini_id=${H5ID}&`,
 }
    $.post(dotaskh5,async(error, response, data) =>{
@@ -1436,7 +1468,7 @@ return new Promise((resolve, reject) => {
   let timestamp=new Date().getTime();
   let h5done ={
     url: `https://bububao.duoshoutuan.com/user/h5_newsdone`,
-    headers: JSON.parse(CookieVal),
+    headers: JSON.parse(bbb),
     body: `taskid=${H5TaskID}&nonce_str=${H5Str}&`,
     timeout: 30000,
 }
