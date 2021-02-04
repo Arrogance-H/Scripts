@@ -1,4 +1,4 @@
-name: bbb
+name: htt
 
 on:
   workflow_dispatch:
@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        BBBCK: ${{ secrets.BBBCK }}
-        
+        HTT_SIGNURLCKNAME: ${{ secrets.HTT_SIGNURLCKNAME }}
+        HTT_SMVIDEOKNAME: ${{ secrets.HTT_SMVIDEOKNAME }}
+        HTT_VIDEONAME: ${{ secrets.HTT_VIDEONAME }}
+        HTT_DONGFANGNAME: ${{ secrets.DONGFANGNAME }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,13 +23,13 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.BBBCK
+        if: env.HTT_SIGNURLCKNAME
         run: |
           npm install
-      - name: '运行 【BBB】'
-        if: env.BBBCK
+      - name: '运行 【htt】'
+        if: env.HTT_SIGNURLCKNAME
         run: |
-          node bbb.js
+          node htt.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
