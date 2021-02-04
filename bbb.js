@@ -49,9 +49,9 @@ if ($.isNode()) {
   } else {
    bbb = process.env.BBBCK.split()
   };
-  Object.keys(bbbck).forEach((item) => {
-        if (bbbck[item]) {
-          CookieValArr.push(bbbck[item])
+  Object.keys(bbb_ck).forEach((item) => {
+        if (bbb_ck[item]) {
+          CookieValArr.push(bbb_ck[item])
         }
     });
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
