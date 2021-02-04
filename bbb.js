@@ -86,7 +86,7 @@ if(CookieVal)$.setdata(CookieVal,'bbb_ck')
 
 $.msg($.name,"開始🎉🎉🎉")
 
-      await cashCheck()
+      //await cashCheck()
       await signIn()
       await checkWaterNum()
       await zaoWanDkInfo()
