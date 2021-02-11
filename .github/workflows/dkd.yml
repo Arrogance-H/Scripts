@@ -37,6 +37,7 @@ jobs:
         env:
           DKD_DUOKANDIANBODY: ${{ secrets.DKD_DUOKANDIANBODY }}
           DKD_DUOKANDIANVODEOBODY: ${{ secrets.DKD_DUOKANDIANVODEOBODY }}
+          DKD_DUOKANDIANCSH: ${{ secrets.DKD_DUOKANDIANCASH }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
