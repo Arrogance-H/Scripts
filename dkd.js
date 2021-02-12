@@ -1,3 +1,52 @@
+/* ziye 
+github地址 https://github.com/ziye12
+TG频道地址  https://t.me/ziyescript
+TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
+boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.boxjs.json
+
+转载请备注个名字，谢谢
+⚠️多看点APP
+请点击前往下载  http://dkd-api.dysdk.com/share.html?uid=13209201
+或者自行下载    邀请码13209201 谢谢支持
+
+2.9 制作
+2.10 增加看视频，基本完善
+2.11 完善判定
+2.11-2  修复视频和广告以及提现判定问题
+2.12 增加碎片显示以及兑换
+
+⚠️一共1个位置 1个ck  👉 2条 Secrets
+多账号换行
+
+第一步 添加  hostname=dkd-api.dysdk.com,
+
+第二步 添加body重写 
+
+登录多看点APP  点击  我的  获取ck
+刷视频获取body，一个body一天可以只领取两次奖励
+
+duokandianbodyVal 👉DKD_duokandianBODY
+duokandianvideobodyVal 👉DKD_duokandianvideoBODY
+
+提现标准 可设置 0 1 3 5 15 50
+duokandianCASH 👉DKD_duokandianCASH
+
+⚠️主机名以及重写👇
+hostname=dkd-api.dysdk.com,
+
+############## 圈x
+#多看点APP获取body
+http:\/\/dkd-api\.dysdk\.com\/* url script-request-body https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/duokandian.js   
+
+############## loon
+http-request http:\/\/dkd-api\.dysdk\.com\/* script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/duokandian.js,requires-body=1,max-size=0, tag=多看点APP获取body
+
+############## surge
+多看点APP获取body = type=http-request,pattern=http:\/\/dkd-api\.dysdk\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/duokandian.js 
+*/
+
+
+
 const $ = Env("多看点APP");
 $.idx = ($.idx = ($.getval('duokandianSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -244,6 +293,10 @@ async function all() {
         if ($.lottoindex.data && $.lottoindex.data.times >= 1) {
             await lotto(); //转盘抽奖
         }
+        if ($.lottoindex.data && $.lottoindex.data.chip >= 4) {
+            await chip(); //碎片兑换
+        }
+
         if (gg && gg.status != 2) {
             await advideo(); //广告视频
             await extratime(); //时段刷新
@@ -254,6 +307,13 @@ async function all() {
             await boxaward(); //宝箱奖励
             await boxbox(); //宝箱翻倍
         }
+        if (gg && gg.status == 2) {
+            console.log(`【时段奖励】：已完成\n`);
+            $.message += `【时段奖励】：已完成\n`
+            console.log(`【宝箱奖励】：已完成\n`);
+            $.message += `【宝箱奖励】：已完成\n`
+        }
+
         if (sp && sp.status == 1) {
             await spaward(); //视频达成
         }
@@ -277,15 +337,22 @@ async function all() {
             await tx(); //提现
         }
 
-        console.log(`【视频统计】：共有${videoBODY.length}个body,预计运行${tt}秒\n`);
-        $.message += `【视频统计】：共有${videoBODY.length}个body,预计运行${tt}秒\n`
+
 
         if (videoBODY.length != 0 && sp && sp.status != 2) {
+            console.log(`【视频统计】：共有${videoBODY.length}个body,预计运行${tt}秒\n`);
+            $.message += `【视频统计】：共有${videoBODY.length}个body,预计运行${tt}秒\n`
+
             await video(); //刷视频
             await $.wait(tt * 1000)
         }
 
 
+        if (videoBODY.length != 0 && sp && sp.status == 2) {
+            console.log(`【视频统计】：共有${videoBODY.length}个body,已完成\n`);
+            $.message += `【视频统计】：共有${videoBODY.length}个body,已完成\n`
+
+        }
 
 
     }
@@ -496,10 +563,14 @@ function lottoindex(timeout = 0) {
                     if ($.lottoindex.data && $.lottoindex.status_code == 200) {
                         console.log(`【抽奖次数】：剩余${$.lottoindex.data.times}次\n`);
                         $.message += `【抽奖次数】：剩余${$.lottoindex.data.times}次\n`;
+                        console.log(`【碎片信息】：剩余${$.lottoindex.data.chip}个\n`);
+                        $.message += `【碎片信息】：剩余${$.lottoindex.data.chip}个\n`;
                     }
                     if ($.lottoindex.status_code == 10020) {
                         console.log(`【抽奖次数】：${$.lottoindex.message}\n`);
                         $.message += `【抽奖次数】：${$.lottoindex.message}\n`;
+                        console.log(`【碎片信息】：${$.lottoindex.message}\n`);
+                        $.message += `【碎片信息】：${$.lottoindex.message}\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -541,6 +612,40 @@ function lotto(timeout = 0) {
         }, timeout)
     })
 }
+//碎片兑换
+function chip(timeout = 0) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let url = {
+                url: `http://dkd-api.dysdk.com/lotto/convert?${duokandianbodyVal}`,
+                headers: duokandianheaderVal,
+                body: {
+                    "id": 4
+                },
+            }
+            $.post(url, async (err, resp, data) => {
+                try {
+                    if (logs) $.log(`${O}, 碎片兑换🚩: ${data}`);
+                    $.chip = JSON.parse(data);
+                    A = 1
+                    if ($.chip.data && $.chip.status_code == 200) {
+                        console.log(`【碎片兑换】：奖励 ${$.chip.data.award}金币\n`);
+                        $.message += `【碎片兑换】：奖励 ${$.chip.data.award}金币\n`;
+                    }
+                    if ($.chip.status_code == 10020) {
+                        console.log(`【碎片兑换】：${$.chip.message}\n`);
+                        $.message += `【碎片兑换】：${$.chip.message}\n`;
+                    }
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve()
+                }
+            })
+        }, timeout)
+    })
+}
+
 //广告视频
 function advideo(timeout = 0) {
     return new Promise((resolve) => {
