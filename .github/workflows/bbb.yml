@@ -1,9 +1,9 @@
-name: bbb
+name: 步步宝
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 8-23/4 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -31,7 +31,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【bbb】'
+      - name: '运行 【步步宝】'
         run: |
           node bbb.js
         env:
