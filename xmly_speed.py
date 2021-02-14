@@ -1056,7 +1056,7 @@ def run():
         print("###"*20)
         print("\n"*4)
 
-    if int(_notify_time.split()[0]) == notify_time and int(_notify_time.split()[1]) < 5:
+    if int(_notify_time.split()[0]) == notify_time and int(_notify_time.split()[1]) < 35:
     # if 1:
         message = ''
         for i in table:
