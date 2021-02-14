@@ -31,13 +31,47 @@ hostname = bububao.duoshoutuan.com,
 const $ = new Env('步步寶')
 let notice = ''
 let CookieVal = $.getdata('bbb_ck')
+let CookieArr = []
+let BDCookie = []
 
+
+
+if(!$.isNode()&&bbbcks && bbbcks.indexOf('&')==-1){
+  CookieArr.push(bbbcks)
+    
+} else {
 if ($.isNode()) {
+  if (process.env.BBB_COOKIE && process.env.BBB_COOKIE.indexOf('&') > -1) {
+  BDCookie = process.env.BBB_COOKIE.split('&');
+  }
+ else if (process.env.BBB_COOKIE && process.env.BBB_COOKIE.indexOf('\n') > -1) {
+  BDCookie = process.env.BBB_COOKIE.split('\n');
+  } else {
+  BDCookie = process.env.BBB_COOKIE.split()
+  }
+      
+   console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`);
+} else if (!$.isNode()&&bbbcks && bbbcks.indexOf('&')>-1){
+  BDCookie = bbbcks.split("&")
+
+}
+
+  Object.keys(BDCookie).forEach((item) => {
+        if (BDCookie[item]) {
+          CookieArr.push(BDCookie[item])
+        } 
+    })
+    console.log(`您共提供${CookieArr.length}个账号 Cookie`)
+ }
+
+
+
+/*if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 }
 
-
+*/
 
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 
@@ -51,7 +85,16 @@ if(CookieVal)$.setdata(CookieVal,'bbb_ck')
    }
 } else {
 !(async () => {
-
+  if (!CookieArr[0]) {
+    console.log($.name, '【提示】请把百度Cookie填入Github 的 Secrets 中，请以&或者换行隔开');
+    return
+  };
+  for (let i = 0; i < CookieArr.length; i++) {
+    if (CookieArr[i]) {
+      CookieVal = CookieArr[i];
+      $.index = i + 1;      
+      
+      
 $.msg($.name,"開始🎉🎉🎉")
 
       await cashCheck()
@@ -70,6 +113,9 @@ $.msg($.name,"開始🎉🎉🎉")
       await checkHomeJin()
       await userInfo()
       await showmsg()
+          
+    }
+  }
 
 })()
     .catch((e) => $.logErr(e))
