@@ -102,21 +102,17 @@ if (process.env.ZMHD && process.env.ZMHD.indexOf('#') > -1) {
   } else {
    zmbody = process.env.ZMBODY.split()
   };
-  
-  
-  
-  
   Object.keys(zmurl).forEach((item) => {
         if (zmurl[item]) {
           zmurlArr.push(zmurl[item])
         }
     });
-    Object.keys(zmhd).forEach((item) => {
+  Object.keys(zmhd).forEach((item) => {
         if (zmhd[item]) {
           zmhdArr.push(zmhd[item])
         }
     });
-    Object.keys(zmbody).forEach((item) => {
+  Object.keys(zmbody).forEach((item) => {
         if (zmbody[item]) {
           zmbodyArr.push(zmbody[item])
         }
@@ -135,13 +131,6 @@ if (process.env.ZMHD && process.env.ZMHD.indexOf('#') > -1) {
     zmbodyArr.push($.getdata(`zmbody${i}`))
   }
 }
-
-
-
-
-
-
-
 
 !(async () => {
   if (typeof $request !== "undefined") {
