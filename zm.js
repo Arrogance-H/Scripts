@@ -64,6 +64,13 @@ const zmhdArr=[]
 const zmbodyArr=[]
 var zz = ''
 
+
+let isGetCookie = typeof $request !== 'undefined'
+if (isGetCookie) {
+   GetCookie();
+   $.done()
+}
+
 if ($.isNode()) {
   if (process.env.ZMURL && process.env.ZMURL.indexOf('#') > -1) {
    zmurl = process.env.ZMURL.split('#');
@@ -75,16 +82,18 @@ if ($.isNode()) {
   } else {
    zmurl = process.env.ZMURL.split()
   };
-  if (process.env. ZMHD&& process.env.ZMHD.indexOf('#') > -1) {
+if (process.env.ZMHD && process.env.ZMHD.indexOf('#') > -1) {
    zmhd = process.env.ZMHD.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
   }
-  else if (process.env.ZMHD && process.env.ZMHD.split('\n').length > 0) {
-   zmhd = process.env.ZMHD.split('\n');
-  } else  {
+  else if (process.env.ZMHD && process.env.ZMHD.indexOf('\n') > -1) {
+   zmhd = process.env.ZMBODY.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
    zmhd = process.env.ZMHD.split()
   };
   if (process.env.ZMBODY && process.env.ZMBODY.indexOf('#') > -1) {
-   zmurl = process.env.ZMBODY.split('#');
+   zmbody = process.env.ZMBODY.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
   else if (process.env.ZMBODY && process.env.ZMBODY.indexOf('\n') > -1) {
@@ -115,15 +124,17 @@ if ($.isNode()) {
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
- } /*else {
-    kkdheaderArr.push($.getdata('kkdheader'))
-    kkdcookieArr.push($.getdata('kkdcookie'))
-    let kkdcount = ($.getval('kkdcount') || '1');
-  for (let i = 2; i <= kkdcount; i++) {
-    kkdheaderArr.push($.getdata(`kkdheader${i}`))
-    kkdcookieArr.push($.getdata(`kkdcookie${i}`))
+ } else {
+    zmurlArr.push($.getdata('zmurl'))
+    zmhdArr.push($.getdata('zmhd'))
+   zmbodyArr.push($.getdata('zmbody'))
+    let zmcount = ($.getval('zmcount') || '1');
+  for (let i = 2; i <= zmcount; i++) {
+    zmurlArr.push($.getdata(`zmurl${i}`))
+    zmhdArr.push($.getdata(`zmhd${i}`))
+    zmbodyArr.push($.getdata(`zmbody${i}`))
   }
-}*/
+}
 
 
 
@@ -138,7 +149,11 @@ if ($.isNode()) {
    
   } else {
     await zmum()
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < zmurlArr.length; i++) {
+  if (zmurlArr[i]) {
+      zmurl = zmurl[i];
+      zmhd = zmhdArr[i];
+      zmbody = zmbodyArr[i];
       $.index = i + 1
       console.log(`\n芝嫲视频开始执行第${i+1}次领取晶石！💦\n等待11秒开始执行下一次领取`)
     await zmsx();
