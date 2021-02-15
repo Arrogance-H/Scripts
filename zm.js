@@ -102,9 +102,9 @@ if ($.isNode()) {
           zmurlArr.push(zmurl[item])
         }
     });
-    Object.keys(zmheader).forEach((item) => {
-        if (zmheader[item]) {
-          zmheaderArr.push(zmheader[item])
+    Object.keys(zmhd).forEach((item) => {
+        if (zmhd[item]) {
+          zmhdArr.push(zmhd[item])
         }
     });
     Object.keys(zmbody).forEach((item) => {
