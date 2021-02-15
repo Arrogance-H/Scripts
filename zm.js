@@ -133,11 +133,11 @@ if (process.env.ZMHD && process.env.ZMHD.indexOf('#') > -1) {
 }
 
 !(async () => {
-  if (typeof $request !== "undefined") {
+ /* if (typeof $request !== "undefined") {
     await zmck()
    
   } else {
-    await zmum()
+    await zmum()*/
 for (let i = 0; i < zmurlArr.length; i++) {
   if (zmurlArr[i]) {
       zmurl = zmurl[i];
@@ -151,7 +151,7 @@ break;
 }
   }$.msg("","",'芝嫲视频本轮晶石已全部领取完毕，，等待下次成熟!')
   }
-  }
+  
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
