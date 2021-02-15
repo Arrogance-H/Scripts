@@ -30,7 +30,8 @@ const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
 let status, videoid,myid;
 status = (status = ($.getval("rlstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const rlurlArr = [], rlheaderArr = []
+const rlurlArr = []
+const rlheaderArr = []
 let rlurl = $.getdata('rlurl')
 let rlheader = $.getdata('rlheader')
 
