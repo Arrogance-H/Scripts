@@ -36,7 +36,7 @@ jobs:
           node zm.js
         env:
           ZMURL: ${{ secrets.ZMURL }}
-          ZMHEADER: ${{ secrets.ZMHEADER }}
+          ZMHD: ${{ secrets.ZMHD }}
           ZMBODY: ${{ secrets.ZMBODY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
