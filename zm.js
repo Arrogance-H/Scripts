@@ -86,7 +86,13 @@ if ($.isNode() && process.env.ZM_zhimabody) {
         middlezhimabody = process.env.ZM_zhimabody.split();
     }
     
-}
+};
+Object.keys(middlezhimabody).forEach((item) => {
+        if (middlezhimabody[item]) {
+          zhimabodyArr.push(middlezhimabody[item])
+        }
+    });
+
 if (COOKIE.zhimabodyArr) {
     ZM_COOKIES = {
         "zhimabodyVal": COOKIE.zhimabodyVal.split('\n'),
