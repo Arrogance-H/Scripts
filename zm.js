@@ -133,11 +133,7 @@ if (process.env.ZMHD && process.env.ZMHD.indexOf('#') > -1) {
 }
 
 !(async () => {
- /* if (typeof $request !== "undefined") {
-    await zmck()
-   
-  } else {
-    await zmum()*/
+ 
 for (let i = 0; i < zmurlArr.length; i++) {
   if (zmurlArr[i]) {
       zmurl = zmurl[i];
@@ -146,12 +142,21 @@ for (let i = 0; i < zmurlArr.length; i++) {
       $.index = i + 1
       console.log(`\n芝嫲视频开始执行第${i+1}次领取晶石！💦\n等待11秒开始执行下一次领取`)
     await zmsx();
+     
+ if (typeof $request !== "undefined") {
+    await zmck()
+   
+  } else {
+    await zmum()
+     
+     
+     
 if(zz==1){
 break;
 }
   }$.msg("","",'芝嫲视频本轮晶石已全部领取完毕，，等待下次成熟!')
   }
-  
+  }
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
