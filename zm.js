@@ -9,16 +9,23 @@ boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.
 
 
 2.13 制作
-2.15 修复刷新问题,修复部分问题
+2.15 修复刷新问题,修复部分问题,点夺宝获取ck
 
 ⚠️一共1个位置 1个ck  👉 1条 Secrets
 多账号换行
+
+点击 https://h5.sxsjyzm.com/sesameH5/public/sesameLogin/register.html?onlyid=612545154 下载APP
+
+或者商店搜索 芝嫲视频 邀请码612545154
+
+谢谢支持
+
 
 第一步 添加  hostname=api.sxsjyzm.com,
 
 第二步 添加body重写 
 
-点击夺宝  一键收取 获取body
+点击夺宝   获取body
 
 
 zhimabodyVal 👉ZM_zhimabody
@@ -27,6 +34,7 @@ zhimabodyVal 👉ZM_zhimabody
 
 ⚠️主机名以及重写👇
 
+时间建议设置一小时一次   如 0 * * * *
 
 hostname=api.sxsjyzm.com,
 
@@ -132,7 +140,7 @@ if (zhimabodyArr == '') {
 
 
 function GetCookie() {
-    if ($request && $request.url.indexOf("loot") >= 0 && $request.url.indexOf("quickgetloot") >= 0) {
+    if ($request && $request.url.indexOf("loot") >= 0 && $request.url.indexOf("index") >= 0) {
         const zhimabodyVal = $request.body;
         if (zhimabodyVal) $.setdata(zhimabodyVal, "zhimabody" + $.idx);
         $.log(
