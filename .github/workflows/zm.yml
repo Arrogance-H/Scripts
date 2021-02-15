@@ -36,7 +36,6 @@ jobs:
           node zm.js
         env:
           ZM_ZHIMABODY: ${{ secrets.ZM_ZHIMABODY }}
-          JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
