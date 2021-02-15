@@ -1,13 +1,13 @@
-name: 抖音极速版
+name: 芝麻
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 */1 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: dyjsb
+    types: zm
 jobs:
   build:
 
@@ -32,16 +32,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【抖音极速版】'
+      - name: '运行 【芝麻】'
         run: |
-          node dyjsb.js
+          node zm.js
         env:
-          SIGNHEADER: ${{ secrets.SIGNHEADER }}
-          SIGNCOOKIE: ${{ secrets.SIGNCOOKIE }}
-          STEPHEADER: ${{ secrets.STEPHEADER }}
-          STEPKEY: ${{ secrets.STEPKEY }}
-          READHEADER: ${{ secrets.READHEADER }}
-          READKEY: ${{ secrets.READKEY }}
+          ZM_ZHIMABODY: ${{ secrets.ZM_ZHIMABODY }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
