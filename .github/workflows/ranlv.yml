@@ -3,7 +3,7 @@ name: 燃旅
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '1,30 10-20 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -16,8 +16,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: ZhiYi-N/script
+       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
