@@ -76,9 +76,9 @@ duokandianheaderVal = {
 };
 if ($.isNode()) {
     // 没有设置 DKD_duokandianCASH 则默认为 0 不提现
-    CASH = process.env.DKD_DUOKANDIANCASH || 0;
+    CASH = process.env.DKD_duokandianCASH || 0;
 }
-if ($.isNode() && process.env.DKD_DUOKANDIANBODY) {
+if ($.isNode() && process.env.DKD_duokandianBODY) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
     console.log(
         `============ cookies分隔符为：${JSON.stringify(
@@ -86,20 +86,20 @@ if ($.isNode() && process.env.DKD_DUOKANDIANBODY) {
     )} =============\n`
     );
     if (
-        process.env.DKD_DUOKANDIANBODY &&
-        process.env.DKD_DUOKANDIANBODY.indexOf(COOKIES_SPLIT) > -1
+        process.env.DKD_duokandianBODY &&
+        process.env.DKD_duokandianBODY.indexOf(COOKIES_SPLIT) > -1
     ) {
-        middleduokandianBODY = process.env.DKD_DUOKANDIANBODY.split(COOKIES_SPLIT);
+        middleduokandianBODY = process.env.DKD_duokandianBODY.split(COOKIES_SPLIT);
     } else {
-        middleduokandianBODY = process.env.DKD_DUOKANDIANBODY.split();
+        middleduokandianBODY = process.env.DKD_duokandianBODY.split();
     }
     if (
-        process.env.DKD_DUOKANDIANVIDEOBODY &&
-        process.env.DKD_DUOKANDIANVIDEOBODY.indexOf(COOKIES_SPLIT) > -1
+        process.env.DKD_duokandianvideoBODY &&
+        process.env.DKD_duokandianvideoBODY.indexOf(COOKIES_SPLIT) > -1
     ) {
-        middleduokandianvideoBODY = process.env.DKD_DUOKANDIANVIDEOBODY.split(COOKIES_SPLIT);
+        middleduokandianvideoBODY = process.env.DKD_duokandianvideoBODY.split(COOKIES_SPLIT);
     } else {
-        middleduokandianvideoBODY = process.env.DKD_DUOKANDIANVIDEOBODY.split();
+        middleduokandianvideoBODY = process.env.DKD_duokandianvideoBODY.split();
     }
 }
 if (COOKIE.duokandianbodyVal) {
