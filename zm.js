@@ -78,14 +78,14 @@ let middlezhimabody = [];
 
 
 
-if ($.isNode() && process.env.ZM_zhimabody) {
+if ($.isNode() && process.env.ZM_ZHIMABODY) {
     if (
-        process.env.ZM_zhimabody &&
-        process.env.ZM_zhimabody.indexOf('\n') > -1
+        process.env.ZM_ZHIMABODY &&
+        process.env.ZM_ZHIMABODY.indexOf('\n') > -1
     ) {
-        middlezhimabody = process.env.ZM_zhimabody.split('\n');
+        middlezhimabody = process.env.ZM_ZHIMABODY.split('\n');
     } else {
-        middlezhimabody = process.env.ZM_zhimabody.split();
+        middlezhimabody = process.env.ZM_ZHIMABODY.split();
     }
     
 }
