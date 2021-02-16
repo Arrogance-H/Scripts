@@ -59,10 +59,10 @@ const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点
 $.message = '', gg = '', sp = '', yi = '', er = '', txtx = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
 
 const duokandianbodyArr = [];
-let duokandianbodyVal = ``;
-let middleduokandianBODY = [];
 const duokandianvideobodyArr = [];
+let duokandianbodyVal = ``;
 let duokandianvideobodyVal = ``;
+let middleduokandianBODY = [];
 let middleduokandianvideoBODY = [];
 
 duokandianheaderVal = {
@@ -76,7 +76,7 @@ duokandianheaderVal = {
 };
 if ($.isNode()) {
     // 没有设置 DKD_duokandianCASH 则默认为 0 不提现
-    CASH = process.env.DKD_duokandianCASH || 0;
+    CASH = process.env.DKD_duokandianCASH || 15;
 }
 if ($.isNode() && process.env.DKD_duokandianBODY) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
