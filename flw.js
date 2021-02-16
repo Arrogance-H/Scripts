@@ -96,7 +96,7 @@ let middleflwqwBODY = [];
 if ($.isNode()) {
   CASH = process.env.FL_CASH || 0;
   // 没有设置 FL_DHCASH 则默认为 0 不兑换
-  DHCASH = process.env.FL_DHCASH || 0;
+  DHCASH = process.env.FL_DHCASH || 5;
 }
 if ($.isNode() && process.env.FL_flwURL) {
   COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
