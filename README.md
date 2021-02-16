@@ -3,4 +3,4 @@
 [@Sunert](https://github.com/Sunert)
 [@ziye66666](https://github.com/ziye66666)
 [@adwktt](https://github.com/adwktt)
-[@ZhiYi-N](https://github.com/ZhiYi-N）
+[@ZhiYi-N](https://github.com/ZhiYi-N)
