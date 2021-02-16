@@ -10,3 +10,5 @@
 - [@ZhiYi-N](https://github.com/ZhiYi-N)
 
 - [@whyour](https://github.com/whyour)
+
+- [@Zero-S1](https://github.com/Zero-S1)
