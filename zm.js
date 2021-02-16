@@ -81,7 +81,7 @@ let middlezhimabody = [];
 if ($.isNode() && process.env.ZM_zhimabody) {
     if (
         process.env.ZM_zhimabody &&
-        process.env.ZM_zhimabody.indexOf(COOKIES_SPLIT) > -1
+        process.env.ZM_zhimabody.indexOf('\n') > -1
     ) {
         middlezhimabody = process.env.ZM_zhimabody.split('\n');
     } else {
