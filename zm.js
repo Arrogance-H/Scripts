@@ -79,23 +79,17 @@ let middlezhimabody = [];
 
 
 if ($.isNode() && process.env.ZM_zhimabody) {
-    COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
-    console.log(
-        `============ cookies分隔符为：${JSON.stringify(
-      COOKIES_SPLIT
-    )} =============\n`
-    );
     if (
         process.env.ZM_zhimabody &&
         process.env.ZM_zhimabody.indexOf(COOKIES_SPLIT) > -1
     ) {
-        middlezhimabody = process.env.ZM_zhimabody.split(COOKIES_SPLIT);
+        middlezhimabody = process.env.ZM_zhimabody.split('\n');
     } else {
         middlezhimabody = process.env.ZM_zhimabody.split();
     }
     
 }
-if (COOKIE.zhimabodyArr) {
+if (COOKIE.zhimabodyArr){
     ZM_COOKIES = {
         "zhimabodyVal": COOKIE.zhimabodyVal.split('\n'),
     
