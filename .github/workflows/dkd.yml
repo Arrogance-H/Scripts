@@ -36,7 +36,7 @@ jobs:
           node dkd.js
         env:
           DKD_duokandianBODY: ${{ secrets.DKD_duokandianBODY }}
-          DKD_duokandianideoBODY: ${{ secrets.DKD_duokandianvideoBODY }}
+          DKD_duokandianvideoBODY: ${{ secrets.DKD_duokandianvideoBODY }}
           DKD_duokandianCASH: ${{ secrets.DKD_duokandianCASH }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
