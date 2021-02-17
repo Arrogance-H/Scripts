@@ -98,11 +98,13 @@ if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('#') > -1) {
   await $.wait(4000)
   console.log(`👥 本次执行共${runsteptokenArr.length}个账号`)
   for(let i = 0; i < runsteptokenArr.length; i++){
+    if (runsteptokenArr[i]) {
     runsteptokenVal = runsteptokenArr[i];
     runstepkeyVal = runstepkeyArr[i];
     console.log(`\n💗💕 开始${$.name}账号【${(i+1)}】 💕💗\n`)
     await $.wait(3000)
     await runstepapp();
+  }
   }
 })()
 .catch((e) => $.logErr(e))
