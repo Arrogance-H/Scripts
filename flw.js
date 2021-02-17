@@ -83,7 +83,7 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 1; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', DHCASH = '';
-let ksp, zp, qw, sp, ms,yd;
+let ksp, zp, qw, sp, ms, yd;
 let dd = 0;
 id = ['329', '263', '313', '207', '241', '251', '249', '245', '201', '297']
 const flwurlArr = [];
@@ -105,7 +105,7 @@ let middleflwydBODY = [];
 if ($.isNode()) {
   CASH = process.env.FL_CASH || 0;
   // 没有设置 FL_DHCASH 则默认为 0 不兑换
-  DHCASH = process.env.FL_DHCASH || 0;
+  DHCASH = process.env.FL_DHCASH || 5;
 }
 if ($.isNode() && process.env.FL_flwURL) {
   COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
