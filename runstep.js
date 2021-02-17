@@ -184,7 +184,7 @@ async function index() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -253,7 +253,7 @@ async function signin() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -286,7 +286,7 @@ async function pickstep(bbid) {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -316,7 +316,7 @@ async function steptomoney() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -372,7 +372,7 @@ async function getharvest() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -404,7 +404,7 @@ async function advlist() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -439,7 +439,7 @@ async function center() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -475,7 +475,7 @@ async function wheelindex() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -538,7 +538,7 @@ async function wheelpick() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -623,7 +623,7 @@ async function wheelincr1() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -651,7 +651,7 @@ async function wheelincr2() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -684,7 +684,7 @@ async function wheelpickpacket(wheelredid) {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -736,7 +736,7 @@ async function shakeindex() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -818,7 +818,7 @@ async function shakeincr1() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -846,7 +846,7 @@ async function shakeincr2() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -879,7 +879,7 @@ async function shakepickpacket(shakeredid) {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -908,7 +908,7 @@ async function shakepick() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -972,7 +972,7 @@ async function gglindex() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -1054,7 +1054,7 @@ async function gglincr1() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -1082,7 +1082,7 @@ async function gglincr2() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -1115,7 +1115,7 @@ async function gglpickpacket(gglredid) {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -1144,7 +1144,7 @@ async function gglpick() {
       body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
-    $.get(url, async (err, resp, data) => {
+    $.post(url, async (err, resp, data) => {
       try {
         if (err) {
           console.log("⛔️API查询请求失败❌ ‼️‼️");
@@ -1186,7 +1186,7 @@ function invite() {
       url: ``,
       headers: JSON.parse(runstepkeyVal),
     }
-    $.get(inviteurl, (error, resp, data) => {
+    $.post(inviteurl, (error, resp, data) => {
       if (error) {
         //$.log("响应错误")
       }
