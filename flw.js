@@ -1,8 +1,8 @@
 /* ziye 
-github地址 https://github.com/ziye12
+github地址 https://github.com/ziye66666
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
-boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.boxjs.json
+boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ziye.boxjs.json
 转载请备注个名字，谢谢
 
 ⚠️返利网
@@ -16,9 +16,10 @@ boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.
 1.31 增加兑换，默认关闭
 2.1 修复判定,修复2
 2.2 防止黑号，兑换时间限制在10点到11点之间
+2.17 增加阅读任务以及阅读提现，20个body 0.12元，默认大于3元提现3元，请提前关注返利网官方公众号
 
 
-⚠️一共4个位置 4个ck  👉 5条 Secrets 
+⚠️一共5个位置 5个ck  👉 6条 Secrets 
 多账号换行
 第一步 添加  hostname=huodong.fanli.com,passport.fanli.com,gw.fanli.com,
 
@@ -34,7 +35,7 @@ flwheaderVal 👉FL_flwHEADER
 flwurlVal 👉FL_flwspBODY
 
 注释header重写 点击 首页 签到赚钱 火山热门视频 获取flwqwbodyVal
-flwurlVal 👉FL_flwqwBODY
+flwqwbodyVal 👉FL_flwqwBODY
 
 设置提现变量 可设置 0.3以上 务必关注官方公众号，并且手动领取红包
 CASH  👉  FL_CASH
@@ -42,27 +43,32 @@ CASH  👉  FL_CASH
 设置兑换变量 可设置0 5 50 100   默认0  不兑换
 DHCASH  👉  FL_DHCASH
 
+注释header重写 点击 首页 签到赚钱 去阅读赚钱 看文章 获取flwydbodyVal（最多20个body）
+flwydbodyVal 👉FL_flwydBODY
+
+
+
 ⚠️主机名以及重写👇
 hostname=huodong.fanli.com,passport.fanli.com,gw.fanli.com,
 
 ############## 圈x
 #返利网获取header
-https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-header https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js   
+https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-header https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js   
 #返利网获取body
-https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-body https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js   
+https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-body https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js   
 
 ############## loon
 #返利网获取header
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js, requires-header=true, tag=返利网获取header
+http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js, requires-header=true, tag=返利网获取header
 
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js,requires-body=1,max-size=0, tag=返利网获取body
+http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js,requires-body=1,max-size=0, tag=返利网获取body
 
 ############## surge
 #返利网获取header
-返利网获取header = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js
+返利网获取header = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js
 
 #返利网获取body
-返利网获取body = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/flw.js
+返利网获取body = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js
 
 
 
@@ -77,24 +83,27 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 1; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', DHCASH = '';
-let ksp, zp, qw, sp, ms;
+let ksp, zp, qw, sp, ms,yd;
 let dd = 0;
-id = ['319', '263', '313', '207', '241', '251', '249', '245', '201', '297']
+id = ['329', '263', '313', '207', '241', '251', '249', '245', '201', '297']
 const flwurlArr = [];
 const flwheaderArr = [];
 const flwspbodyArr = [];
 const flwqwbodyArr = [];
+const flwydbodyArr = [];
 let flwurlVal = ``;
 let flwheaderVal = ``;
 let flwspbodyVal = ``;
 let flwqwbodyVal = ``;
+let flwydbodyVal = ``;
 let middleflwURL = [];
 let middleflwHEADER = [];
 let middleflwspBODY = [];
 let middleflwqwBODY = [];
+let middleflwydBODY = [];
 // 没有设置 FL_CASH 则默认为 0 不提现
 if ($.isNode()) {
-  CASH = process.env.FL_CASH || 0;
+  CASH = process.env.FL_CASH || 0.3;
   // 没有设置 FL_DHCASH 则默认为 0 不兑换
   DHCASH = process.env.FL_DHCASH || 5;
 }
@@ -137,6 +146,16 @@ if ($.isNode() && process.env.FL_flwURL) {
   } else {
     middleflwqwBODY = process.env.FL_flwqwBODY.split();
   }
+  if (
+    process.env.FL_flwydBODY &&
+    process.env.FL_flwydBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    middleflwydBODY = process.env.FL_flwydBODY.split(COOKIES_SPLIT);
+  } else {
+    middleflwydBODY = process.env.FL_flwydBODY.split();
+  }
+  
+  
 }
 if (COOKIE.flwurlVal) {
   FL_COOKIES = {
@@ -144,6 +163,7 @@ if (COOKIE.flwurlVal) {
     "flwheaderVal": COOKIE.flwheaderVal.split('\n'),
     "flwspbodyVal": COOKIE.flwspbodyVal.split('\n'),
     "flwqwbodyVal": COOKIE.flwqwbodyVal.split('\n'),
+	"flwydbodyVal": COOKIE.flwydbodyVal.split('\n'),
   }
   Length = FL_COOKIES.flwurlVal.length;
 }
@@ -169,11 +189,18 @@ if (!COOKIE.flwurlVal) {
         flwqwbodyArr.push(middleflwqwBODY[item]);
       }
     });
+	Object.keys(middleflwydBODY).forEach((item) => {
+      if (middleflwydBODY[item]) {
+        flwydbodyArr.push(middleflwydBODY[item]);
+      }
+    });
+	
   } else {
     flwurlArr.push($.getdata("flwurl"));
     flwheaderArr.push($.getdata("flwheader"));
     flwspbodyArr.push($.getdata("flwspbody"));
     flwqwbodyArr.push($.getdata("flwqwbody"));
+    flwydbodyArr.push($.getdata("flwydbody"));	
     // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
     if ("flwCASH") {
       CASH = $.getval("flwCASH") || '0';
@@ -188,6 +215,7 @@ if (!COOKIE.flwurlVal) {
         flwheaderArr.push($.getdata(`flwheader${i}`));
         flwspbodyArr.push($.getdata(`flwspbody${i}`));
         flwqwbodyArr.push($.getdata(`flwqwbody${i}`));
+		flwydbodyArr.push($.getdata(`flwydbody${i}`));
       }
     }
   }
@@ -234,6 +262,30 @@ function GetCookie() {
     );
     $.msg($.name + $.idx, `获取flwqwbodyVal: 成功🎉`, ``);
   }
+  
+   //返利网阅读
+  if ($request && $request.url.indexOf("news") >= 0 && $request.url.indexOf("read.htm") >= 0) {
+        const flwydbodyVal = $request.body
+        if (flwydbodyVal) {
+            let bodys = $.getdata('flwydbody' + $.idx);
+            if (bodys) {
+                if (bodys.indexOf(flwydbodyVal) >= 0) {
+                    $.msg('body重复跳过');
+                    $.done();
+                }
+                flwydBody = bodys.split('&');
+                bodys = flwydbodyVal + '&' + bodys;
+            } else {
+                bodys = flwydbodyVal;
+            }
+            $.setdata(bodys, "flwydbody" + $.idx);
+            $.log(
+                `[${$.name + $.idx}] 获取flwydbody${flwydBody.length+1}✅: 成功,flwydbody${flwydBody.length+1}: ${flwydbodyVal}`
+            );
+            $.msg($.name + $.idx, `获取flwydbody${flwydBody.length+1}✅: 成功🎉`)
+        }
+    }
+  
 }
 console.log(
   `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
@@ -332,12 +384,14 @@ async function all() {
       flwheaderVal = FL_COOKIES.flwheaderVal[i];
       flwspbodyVal = FL_COOKIES.flwspbodyVal[i];
       flwqwbodyVal = FL_COOKIES.flwqwbodyVal[i];
+	  flwydbodyVal = FL_COOKIES.flwydbodyVal[i];
     }
     if (!COOKIE.flwurlVal) {
       flwurlVal = flwurlArr[i];
       flwheaderVal = flwheaderArr[i];
       flwspbodyVal = flwspbodyArr[i];
       flwqwbodyVal = flwqwbodyArr[i];
+	  flwydbodyVal = flwydbodyArr[i];
     }
     flwurlValsplit = flwurlVal.split('&')
     uid = flwurlValsplit[1].split('=')[1]
@@ -359,6 +413,15 @@ async function all() {
     dd = 0;
     O = (`${$.name + (i + 1)}🔔`);
     await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
+	ydBODY = flwydbodyVal.split('&');
+
+        if (flwydbodyVal == '') {
+            ydBODY.length = 0
+            tt = 0
+        } else tt = ydBODY.length * 1 - 0.9
+	
+	
+	
     let cookie_is_live = await flwdl(i + 1); //登录
     if (!cookie_is_live) {
       continue;
@@ -405,6 +468,30 @@ async function all() {
         await DH(); //兑换
       }
     }
+	
+	if (ydBODY.length != 0 && yd && yd.status!=1) {
+            console.log(`【阅读统计】：共有${ydBODY.length}个body,预计运行${tt}秒\n`);
+            $.message += `【阅读统计】：共有${ydBODY.length}个body,预计运行${tt}秒\n`
+			  }
+			
+if (ydBODY.length != 0 && yd && yd.status==1) {
+            console.log(`【阅读统计】：共有${ydBODY.length}个body,已完成\n`);
+            $.message += `【阅读统计】：共有${ydBODY.length}个body,已完成\n`
+
+        }
+
+               
+if (yd.status!=1){
+            await read(); //刷阅读
+            await $.wait(tt * 1000)
+			 }
+      
+                await flwydzh();
+				if ($.flwydzh&&xjye3-0.12>=3){
+                await flwydtx();
+ }
+	
+	
   }
 }
 //通知
@@ -680,7 +767,7 @@ function flwtask(timeout = 0) {
           if (logs) $.log(`${O}, 任务列表🚩: ${data}`);
           $.flwtask = JSON.parse(data);
           if ($.flwtask.status && $.flwtask.status == 1) {
-            jd = $.flwtask.data.tasks.find(item => item.id === '319');
+            zj = $.flwtask.data.tasks.find(item => item.id === '329');
             xyx = $.flwtask.data.tasks.find(item => item.id === '3');
             ksp = $.flwtask.data.tasks.find(item => item.id === '141');
             qw = $.flwtask.data.tasks.find(item => item.id === '83');
@@ -713,9 +800,12 @@ function flwtask(timeout = 0) {
             if (gk.status==1){$.message +=`【${gk.title}】:${gk.point}金币，已完成\n`}
             if (sp.status==1){$.message +=`【${sp.title}】:${sp.point}金币，已完成\n`}
             if (ms.status==1){$.message +=`【${ms.title}】:${ms.point}金币，已完成\n`}
-            if (yd.status==1){$.message +=`【${yd.title}】:${yd.point}金币，已完成\n`}
+            
             if (zp.status==1){$.message +=`【${zp.title}】:${zp.point}金币，已完成\n`}
             */
+			
+			if (yd.status==1){$.message +=`【${yd.title}】:${yd.point}金币，已完成\n`}
+			
           } else
             $.message += '【任务列表】✖️:' + $.flwtask.info + '\n'
         } catch (e) {
@@ -878,6 +968,122 @@ function flwlrw(timeout = 0) {
     }, timeout)
   })
 }
+
+//刷阅读
+function read(timeout = 0) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            var inss = 0;
+            var ins = 0; 
+            for (let i = 0; i < ydBODY.length; i++) {
+                setTimeout(() => {
+                    let url = {
+                        url: `https://gw.fanli.com/app/v1/news/read.htm?src=1&v=7.16.19.1&abtest=${abtest}`,
+                        headers: HEADER,
+                        body: `${ydBODY[i]}`,
+                    }
+                    $.post(url, async (err, resp, data) => {
+                        try {
+                            if (logs) $.log(`${O}, 刷阅读🚩: ${data}`);
+                            $.read = JSON.parse(data);
+                            if ($.read.data && $.read.status == 1&&$.read.data.rewards) {
+                                console.log(`【刷阅读】：开始领取第${i+1}次阅读奖励,获得${$.read.data.rewards}阅读币,等待1秒继续\n`);
+                                inss += $.read.data.rewards;
+                                ins += 1;
+                            }
+                            if ($.read.status == 1&&!$.read.data.rewards) {
+                                console.log(`【刷阅读】：开始领取第${i+1}次阅读奖励,重复领取,等待1秒继续\n`);
+                            }
+                        } catch (e) {
+                            $.logErr(e, resp);
+                        } finally {
+                            resolve()
+                        }
+                    })
+                }, i * 1000);
+            }
+            setTimeout(() => {
+                if ($.read.status) {
+                    console.log(`【刷阅读】：共领取${ins}次阅读奖励,共${inss}阅读币\n`);
+                    $.message += `【刷阅读】：共领取${ins}次阅读奖励,共${inss}阅读币\n`
+                }
+                
+            }, ydBODY.length * 1000-500)
+        }, timeout)
+    })
+}
+
+//阅读账户
+function flwydzh(timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+header=flwheaderVal.replace(`huodong.fanli.com`, `finder.fanli.com`)	
+
+      let url = {
+        url: `https://gw.fanli.com/app/v1/news/header.htm?uid=${uid}&token=${token}&tpl=&src=1&v=7.16.19.1&abtest=${abtest}`,
+        headers: HEADER,
+      }
+      $.get(url, async (err, resp, data) => {
+        try {
+          if (logs) $.log(`${O}, 阅读账户🚩: ${data}`);
+          $.flwydzh = JSON.parse(data);
+          if ($.flwydzh.status && $.flwydzh.status == 1) {
+			  jryd1 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_todayReadedTitle');
+			  jryd2 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_todayReadedContent');
+			  jrydb1 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_todayReadCoinTitle');
+			  jrydb2 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_todayReadCoinContent');
+			  xjye1 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_withdrawCashesTitle');
+			  xjye2 = $.flwydzh.data.header.dlData.find(item => item.name === 'tp_withdrawCashesContent');
+			  
+			  jryd3 = jryd2.richTextInfo.split('<font')[0];
+			  jrydb3 = jrydb2.richTextInfo.split('<font')[0];
+			  xjye3 = xjye2.richTextInfo.split('<font')[0];
+			  
+			  
+            console.log(`【${jryd1.text}】：${jryd3}分钟\n【${jrydb1.text}】：${jrydb3}币\n【${xjye1.text}】：${xjye3}元\n`);
+				
+           $.message += `【${jryd1.text}】：${jryd3}分钟\n【${jrydb1.text}】：${jrydb3}币\n【${xjye1.text}】：${xjye3}元\n`
+          }
+        } catch (e) {
+          $.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    }, timeout)
+  })
+}
+
+
+//阅读提现
+function flwydtx(timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout(() => {		
+		header=flwheaderVal.replace(/huodong.fanli.com/g, `finder.fanli.com`)		
+      let url = {
+        url: `https://finder.fanli.com/news/index/ajaxTixian?amount=3`,
+        headers: JSON.parse(header),
+      }
+      $.get(url, async (err, resp, data) => {
+        try {
+          if (logs) $.log(`${O}, 阅读提现🚩: ${data}`);
+          $.flwydtx = JSON.parse(data);
+          if ($.flwydtx.status && $.flwydtx.status == 1) {
+            $.message += '【阅读提现】🎉:成功提现3元\n'
+          }
+		  if ($.flwydtx.status && $.flwydtx.status == 0) {
+            $.message += '【阅读提现】🎉:'+$.flwydtx.info+'\n'
+          }
+        } catch (e) {
+          $.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    }, timeout)
+  })
+}
+
 // prettier-ignore
 function Env(t, e) {
   class s {
