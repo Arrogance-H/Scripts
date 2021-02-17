@@ -82,12 +82,12 @@ if ($.isNode()) {
   runsteptokenArr.push($.getdata('runsteptoken'));
   runstepkeyArr.push($.getdata('runstepkey'));
   // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
-  let Count = ($.getval('Count') || '1') - 0;
+  let Count = ($.getval('Count') || '1');
   for (let i = 2; i <= Count; i++) {
-    if ($.getdata(`runsteptoken${i}`)) {
+    
       runsteptokenArr.push($.getdata(`runsteptoken${i}`));
       runstepkeyArr.push($.getdata(`runstepkey${i}`));
-    }
+    
   }
 }
 
