@@ -90,7 +90,7 @@ if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('#') > -1) {
 
 !(async () => {
   cc = (`${jsname}任务执行通知🔔`);
-  if (typeof $.getdata('runsteptoken') === "undefined") {
+  if (!runsteptokenArr[0]) {
     console.log($.name, '【提示】请先前往获取cookie📲')
     return;
   }
