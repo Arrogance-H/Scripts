@@ -40,9 +40,14 @@ const runstepkeyArr = [];
 let runstepkeyVal = "";
 
 
-if ($.isNode()) {
+let isGetCookie = typeof $request !== 'undefined'
+if (isGetCookie) {
+   GetCookie();
+   $.done()
+}
 
-if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('#') > -1) {
+if ($.isNode()) {
+  if (process.env.RUNSTEPTOKEN && process.env.RUNSTEPTOKEN.indexOf('#') > -1) {
    runsteptokenVal = process.env.RUNSTEPTOKEN.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
