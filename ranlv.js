@@ -99,7 +99,7 @@ if ($.isNode()) {
   }
 }
 !(async () => {
-if (!rlheaderArr[0] && !rlbodyArr[0] && !rlurlArr[0]) {
+if (!rlheaderArr[0] && && !rlurlArr[0]) {
     $.msg($.name, '【提示】请先获取燃旅视频一cookie')
     return;
   }
