@@ -264,8 +264,9 @@ async function all() {
 
 console.log(`\n${O}\n========== 【${O}】 ==========\n`);
                         $.message += `\n${O}\n========== 【${O}】 ==========\n`;
-           
+            
             await zhima(); //运行
+            await zhimasx(); //刷新
 
  
 
@@ -367,13 +368,13 @@ function zhima(timeout = 0) {
                     if (logs) $.log(`${O}, 芝嫲收晶石🚩: ${data}`);
 
 $.zhima= JSON.parse(data);
-
+await zhimasx()
                     if ($.zhima.code==200) {
 
                         console.log(`【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n\n`)
                         $.message +=`【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n\n`
 
-await zhimasx()
+
 await $.wait(11000)
 await zhima()
 
@@ -383,14 +384,14 @@ if ($.zhima.code==1001) {
 
                         console.log(`【晶石收取】:${$.zhima.mess},间隔11秒才能收取\n\n`)
                         $.message +=`【晶石收取】:${$.zhima.mess},间隔11秒才能收取\n\n`
-
+                   
                     }
 
 if ($.zhima.code==1002) {
 
                         console.log(`【晶石收取】:${$.zhima.mess},间隔3小时才能收取\n\n`)
                         $.message +=`【晶石收取】:${$.zhima.mess},间隔3小时才能收取\n\n`
-
+                      
                     }
 
 
@@ -398,7 +399,7 @@ if ($.zhima.code==156) {
 
                         console.log(`【晶石收取】:${$.zhima.mess}\n\n`)
                         $.message +=`【晶石收取】:${$.zhima.mess}\n\n`
-
+                        
                     }
 
 
