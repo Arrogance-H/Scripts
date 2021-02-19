@@ -16,8 +16,8 @@ const $ = new Env("中青看看赚");
 $.suffix = i => i > 0 ? i + 1 + '' : '';
 $.isRewrite = 'undefined' !== typeof $request;
 $.isResponse = 'undefined' !== typeof $response;
-const youthBannerArr=[];
-let youthBanner = 'youth_banner';
+const youthBannerArr= [];
+let youthBanner = [];
 const youthAndroidReadtime = 'youth_android_readtime';
 const youthAndroidReward = 'youth_android_reward';
 const youthAndroidNewtask = 'youth_android_newtask';
@@ -48,22 +48,39 @@ if ($.isNode()) {
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
- } /*else {
-    kkdheaderArr.push($.getdata('kkdheader'))
-    kkdcookieArr.push($.getdata('kkdcookie'))
-    let kkdcount = ($.getval('kkdcount') || '1');
-  for (let i = 2; i <= kkdcount; i++) {
-    kkdheaderArr.push($.getdata(`kkdheader${i}`))
-    kkdcookieArr.push($.getdata(`kkdcookie${i}`))
-  }
+ } else {
+    youthBannerArr.push($.getdata('youthBanner'))
+    
 }
 
-
-*/
 
 
 
 !(async () => {
+  
+  
+  
+  
+  
+  if (!youthBannerArr[0]) {
+    $.msg($.name, '【提示】请先获取cookie')
+    return;
+  }
+   console.log(`------------- 共${youthBannerArr.length}个账号----------------\n`)
+  for (let i = 0; i < youthBannerArr.length; i++) {
+    if (youthBannerArr[i]) {
+      
+      youthBanner = youthBannerArr[i];
+      $.index = i + 1;
+      console.log(`\n开始【${$.index}】`)
+      await bannerTask()
+  
+  
+    }
+  }
+  
+  
+  
   if ($.isRewrite) {
     // 抓包
     let url = $request.url;
@@ -278,6 +295,7 @@ if ($.isNode()) {
     }
     $.setjson(logData, 'acExecLogData');
   }
+    
 })().catch((e) => $.logErr(e)).finally(() => $.done());
 
 
