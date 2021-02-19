@@ -123,7 +123,7 @@ let refreshtokenVal = ``;
 let middlerefreshTOKEN = [];
 if ($.isNode()) {
     // 没有设置 XP_CASH 则默认为 0 不提现
-    CASH = process.env.XP_CASH || 15;
+    CASH = process.env.XP_CASH || 1;
     // 没有设置 XP_live 则默认0
     LIVE = process.env.XP_live || 1;
     // 没有设置 XP_phone 则默认为 0 
