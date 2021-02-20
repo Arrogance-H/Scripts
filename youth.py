@@ -20,7 +20,8 @@ cookies1 = {
   'YOUTH_REDBODY': '',
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': '',
-  'YOUTH_SHAREBODY': ''
+  'YOUTH_SHAREBODY': '',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=49023460&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=4aa0b274198dafebe5c214ea6097d12b&os_version=14.4&phone_code=4aa0b274198dafebe5c214ea6097d12b&phone_network=WIFI&platform=3&request_time=1613564334&resolution=780x1688&sm_device_id=20201217182246943bf1bd97a3f812320f5928fcb1f58a0193953a9e9b154d&szlm_ddid=D2ouM68JTfh3vGJ4s5ihdCCKhjoBOMPkUUECXmh7wlq7AXa0&time=1613564335&token=d55ed7b2787ff9c0ca2c10d28d2c86a9&uid=52242968&uuid=4aa0b274198dafebe5c214ea6097d12b'
 }
 cookies2 = {
   'YOUTH_HEADER': {},
@@ -28,7 +29,8 @@ cookies2 = {
   'YOUTH_REDBODY': '',
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': '',
-  'YOUTH_SHAREBODY': ''
+  'YOUTH_SHAREBODY': '',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=49023460&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=4aa0b274198dafebe5c214ea6097d12b&os_version=14.4&phone_code=4aa0b274198dafebe5c214ea6097d12b&phone_network=WIFI&platform=3&request_time=1613564334&resolution=780x1688&sm_device_id=20201217182246943bf1bd97a3f812320f5928fcb1f58a0193953a9e9b154d&szlm_ddid=D2ouM68JTfh3vGJ4s5ihdCCKhjoBOMPkUUECXmh7wlq7AXa0&time=1613564335&token=d55ed7b2787ff9c0ca2c10d28d2c86a9&uid=52242968&uuid=4aa0b274198dafebe5c214ea6097d12b'
 }
 cookies3 = {
   'YOUTH_HEADER': {},
@@ -36,7 +38,8 @@ cookies3 = {
   'YOUTH_REDBODY': '',
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': '',
-  'YOUTH_SHAREBODY': ''
+  'YOUTH_SHAREBODY': '',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=49023460&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=4aa0b274198dafebe5c214ea6097d12b&os_version=14.4&phone_code=4aa0b274198dafebe5c214ea6097d12b&phone_network=WIFI&platform=3&request_time=1613564334&resolution=780x1688&sm_device_id=20201217182246943bf1bd97a3f812320f5928fcb1f58a0193953a9e9b154d&szlm_ddid=D2ouM68JTfh3vGJ4s5ihdCCKhjoBOMPkUUECXmh7wlq7AXa0&time=1613564335&token=d55ed7b2787ff9c0ca2c10d28d2c86a9&uid=52242968&uuid=4aa0b274198dafebe5c214ea6097d12b'
 }
 cookies4 = {
   'YOUTH_HEADER': {},
@@ -44,7 +47,8 @@ cookies4 = {
   'YOUTH_REDBODY': '',
   'YOUTH_READTIMEBODY': '',
   'YOUTH_WITHDRAWBODY': '',
-  'YOUTH_SHAREBODY': ''
+  'YOUTH_SHAREBODY': '',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=49023460&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=4aa0b274198dafebe5c214ea6097d12b&os_version=14.4&phone_code=4aa0b274198dafebe5c214ea6097d12b&phone_network=WIFI&platform=3&request_time=1613564334&resolution=780x1688&sm_device_id=20201217182246943bf1bd97a3f812320f5928fcb1f58a0193953a9e9b154d&szlm_ddid=D2ouM68JTfh3vGJ4s5ihdCCKhjoBOMPkUUECXmh7wlq7AXa0&time=1613564335&token=d55ed7b2787ff9c0ca2c10d28d2c86a9&uid=52242968&uuid=4aa0b274198dafebe5c214ea6097d12b'
 }
 COOKIELIST = [cookies1,cookies2,cookies3,cookies4]  # 多账号准备
 
@@ -58,6 +62,7 @@ if "YOUTH_HEADER1" in os.environ:
     readTimeBodyVar = f'YOUTH_READTIMEBODY{str(i+1)}'
     withdrawBodyVar = f'YOUTH_WITHDRAWBODY{str(i+1)}'
     shareBodyVar = f'YOUTH_SHAREBODY{str(i+1)}'
+    startBodyVar = f'YOUTH_STARTBODY{str(i+1)}'
     if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
       globals()['cookies'+str(i + 1)]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
       globals()['cookies'+str(i + 1)]["YOUTH_READBODY"] = os.environ[readBodyVar]
@@ -65,6 +70,7 @@ if "YOUTH_HEADER1" in os.environ:
       globals()['cookies' + str(i + 1)]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
       globals()['cookies' + str(i + 1)]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
       globals()['cookies' + str(i + 1)]["YOUTH_SHAREBODY"] = os.environ[shareBodyVar]
+      globals()['cookies' + str(i + 1)]["YOUTH_STARTBODY"] = os.environ[startBodyVar]
       COOKIELIST.append(globals()['cookies'+str(i + 1)])
   print(COOKIELIST)
 
@@ -658,6 +664,30 @@ def bereadRed(headers):
     print(traceback.format_exc())
     return
 
+def startApp(headers, body):
+  """
+  启动App
+  :param headers:
+  :return:
+  """
+  time.sleep(0.3)
+  url = 'https://ios.baertt.com/v6/count/start.json'
+  headers = {
+    'User-Agent': 'KDApp/1.8.0 (iPhone; iOS 14.2; Scale/3.00)',
+    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+  }
+  try:
+    response = requests_session().post(url=url, headers=headers, data=body, timeout=30).json()
+    print('启动App')
+    print(response)
+    if response['success'] == True:
+      return response
+    else:
+      return
+  except:
+    print(traceback.format_exc())
+    return
+
 def run():
   title = f'📚中青看点'
   content = ''
@@ -666,13 +696,17 @@ def run():
   print(f'\n【中青看点】{beijing_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
   hour = beijing_datetime.hour
   for i, account in enumerate(COOKIELIST):
-    headers = account['YOUTH_HEADER']
-    readBody = account['YOUTH_READBODY']
-    redBody = account['YOUTH_REDBODY']
-    readTimeBody = account['YOUTH_READTIMEBODY']
-    withdrawBody = account['YOUTH_WITHDRAWBODY']
-    shareBody = account['YOUTH_SHAREBODY']
+    headers = account.get('YOUTH_HEADER')
+    readBody = account.get('YOUTH_READBODY')
+    redBody = account.get('YOUTH_REDBODY')
+    readTimeBody = account.get('YOUTH_READTIMEBODY')
+    withdrawBody = account.get('YOUTH_WITHDRAWBODY')
+    shareBody = account.get('YOUTH_SHAREBODY')
+    startBody = account.get('YOUTH_STARTBODY')
     rotaryBody = f'{headers["Referer"].split("&")[15]}&{headers["Referer"].split("&")[8]}'
+
+    if startBody:
+      startApp(headers=headers, body=startBody)
     sign_res = sign(headers=headers)
     if sign_res and sign_res['status'] == 1:
       content += f'【签到结果】：成功 🎉 明日+{sign_res["nextScore"]}青豆'
@@ -700,10 +734,11 @@ def run():
     visit_reward_res = visitReward(body=readBody)
     if visit_reward_res:
       content += f'\n【回访奖励】：+{visit_reward_res["score"]}青豆'
-    shareArticle(headers=headers, body=shareBody)
-    for action in ['beread_extra_reward_one', 'beread_extra_reward_two', 'beread_extra_reward_three']:
-      time.sleep(5)
-      threeShare(headers=headers, action=action)
+    if shareBody:
+      shareArticle(headers=headers, body=shareBody)
+      for action in ['beread_extra_reward_one', 'beread_extra_reward_two', 'beread_extra_reward_three']:
+        time.sleep(5)
+        threeShare(headers=headers, action=action)
     open_box_res = openBox(headers=headers)
     if open_box_res:
       content += f'\n【开启宝箱】：+{open_box_res["score"]}青豆 下次奖励{open_box_res["time"] / 60}分钟'
@@ -768,7 +803,7 @@ def run():
   print(content)
 
   # 每天 23:00 发送消息推送
-  if beijing_datetime.hour == 23 and beijing_datetime.minute >= 0 and beijing_datetime.minute < 35:
+  if beijing_datetime.hour == 23 and beijing_datetime.minute >= 0 and beijing_datetime.minute < 5:
     send(title=title, content=result)
   elif not beijing_datetime.hour == 23:
     print('未进行消息推送，原因：没到对应的推送时间点\n')
