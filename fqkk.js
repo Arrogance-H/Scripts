@@ -79,14 +79,6 @@ if ($.isNode()) {
    hour = (new Date()).getHours();
    minute = (new Date()).getMinutes();
 }
-//CK运行
-
-let isGetCookie = typeof $request !== 'undefined'
-if (isGetCookie) {
-   GetCookie();
-   $.done()
-}
-
 
 if ($.isNode()) {
   if (process.env.FQKKURL && process.env.FQKKURL.indexOf('#') > -1) {
@@ -112,7 +104,7 @@ if ($.isNode()) {
           fqkkurlArr.push(fqkkurl[item])
         }
     });
-    Object.keys(fqkkhd).forEach((item) => {
+  Object.keys(fqkkhd).forEach((item) => {
         if (kfqkkhd[item]) {
           fqkkhdArr.push(fqkkhd[item])
         }
