@@ -142,17 +142,18 @@ if (!fqkkhdArr[0]) {
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【番茄看看${$.index}】`)
-          for (let x = 0; x < fqkkxh; x++) {
-      $.index = x + 1
-      console.log(`\n番茄看看开始执行第${x+1}次阅读任务！💦\n`)
-    await fqkk1();
-if(zz==1){
-$.msg("","",'番茄看看任务异常，请查看脚本运行日志查看情况!')
-break;
-}
+      for (let x = 0; x < fqkkxh; x++) {
+          $.index = x + 1
+          console.log(`\n番茄看看开始执行第${x+1}次阅读任务！💦\n`)
+          await fqkk1();
+        if (zz==1){
+          $.msg("","",'番茄看看任务异常，请查看脚本运行日志查看情况!')
+          break;
   }
-  await fqkktx();
-}}
+ }
+          await fqkktx();
+  }
+ }
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
