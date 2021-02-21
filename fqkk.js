@@ -105,7 +105,7 @@ if ($.isNode()) {
         }
     });
   Object.keys(fqkkhd).forEach((item) => {
-        if (kfqkkhd[item]) {
+        if (fqkkhd[item]) {
           fqkkhdArr.push(fqkkhd[item])
         }
     });
