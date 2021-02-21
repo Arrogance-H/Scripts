@@ -120,7 +120,7 @@ if ($.isNode()) {
     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
     fqkkhdArr.push($.getdata(`fqkkhd${i}`))
 }
-
+ }
 !(async () => {
 if (!fqkkhdArr[0]) {
     $.msg($.name, '【提示】请先获取cookie')
