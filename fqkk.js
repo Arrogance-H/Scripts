@@ -152,7 +152,7 @@ break;
 }
   }
   await fqkktx();
-}}}
+}}
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
