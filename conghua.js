@@ -166,7 +166,7 @@ if ($.isNode()) {
    timeredbodyVal = process.env.CH_TIMERED.split()
   };
   
-  if (process.env CH_CALLBACKKEY && process.env.CH_CALLBACKKEY.indexOf('#') > -1) {
+  /*if (process.env CH_CALLBACKKEY && process.env.CH_CALLBACKKEY.indexOf('#') > -1) {
    callbackkeyVal = process.env.CH_CALLBACKKEY.split('#');
   }
   else if (process.env.CH_CALLBACKKEY && process.env.CH_CALLBACKKEY.split('\n').length > 0) {
@@ -204,7 +204,7 @@ if ($.isNode()) {
    callbackurlVal = process.env.CH_CALLBACKURL.split()
   };
 
-  /*if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.indexOf('#') > -1) {
+  if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.indexOf('#') > -1) {
    readbodyVal = process.env.CH_VIDEOBODY.split('#');
   }
   else if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.split('\n').length > 0) {
