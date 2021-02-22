@@ -166,13 +166,13 @@ if ($.isNode()) {
    timeredbodyVal = process.env.CH_TIMERED.split()
   };
   
-  if (process.env CH_CALLBCKKEY && process.env.CH_CALLBCKKEY.indexOf('#') > -1) {
-   callbackkeyVal = process.env.CH_CALLBCKKEY.split('#');
+  if (process.env CH_CALLBACKKEY && process.env.CH_CALLBACKKEY.indexOf('#') > -1) {
+   callbackkeyVal = process.env.CH_CALLBACKKEY.split('#');
   }
-  else if (process.env.CH_CALLBCKKEY && process.env.CH_CALLBCKKEY.split('\n').length > 0) {
-   callbackkeyVal = process.env.CH_CALLBCKKEY.split('\n');
+  else if (process.env.CH_CALLBACKKEY && process.env.CH_CALLBACKKEY.split('\n').length > 0) {
+   callbackkeyVal = process.env.CH_CALLBACKKEY.split('\n');
   } else  {
-   callbackkeyVal = process.env.CH_CALLBCKKEY.split()
+   callbackkeyVal = process.env.CH_CALLBACKKEY.split()
   };
 
   if (process.env.CH_CASH && process.env.CH_CASH.indexOf('#') > -1) {
