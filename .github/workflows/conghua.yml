@@ -37,7 +37,7 @@ jobs:
         env:
           CH_TASKCENTER: ${{ secrets.CH_TASKCENTER }}
           CH_SHAREREWARD: ${{ secrets.CH_SHAREREWARD }}
-          CH_TIMERED: ${{ secrets.CH_TIMERED: }}
+          CH_TIMERED: ${{ secrets.CH_TIMERED }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
