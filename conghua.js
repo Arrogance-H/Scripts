@@ -204,7 +204,7 @@ if ($.isNode()) {
    callbackurlVal = process.env.CH_CALLBACKURL.split()
   };
 
-  if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.indexOf('#') > -1) {
+  /*if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.indexOf('#') > -1) {
    readbodyVal = process.env.CH_VIDEOBODY.split('#');
   }
   else if (process.env.CH_VIDEOBODY && process.env.CH_VIDEOBODY.split('\n').length > 0) {
@@ -220,7 +220,7 @@ if ($.isNode()) {
    sharebodyVal = process.env.CH_SHAREBODY.split('\n');
   } else  {
    sharebodyVal = process.env.CH_SHAREBODY.split()
-  };
+  };*/
 
   Object.keys(taskcenterbodyVal).forEach((item) => {
     if (taskcenterbodyVal[item]) {
