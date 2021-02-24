@@ -83,7 +83,7 @@ let middlezhimatxbody = [];
 
 if ($.isNode()) {
     // 没有设置 ZM_CASH 则默认为 0 不提现
-    CASH = process.env.ZM_CASH || 0;
+    CASH = process.env.ZM_CASH || 10;
 }
 
 if ($.isNode() && process.env.ZM_zhimabody) {
