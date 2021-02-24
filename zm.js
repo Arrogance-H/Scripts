@@ -11,6 +11,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zi
 2.13 制作
 2.15 修复刷新问题,修复部分问题,点夺宝获取ck
 2.24 增加自动提现，需要自行获取对应数值的body，并填写CASH变量
+2.24-2 修复刷新错误，务必更新
 
 ⚠️一共1个位置 1个ck  👉 1条 Secrets
 多账号换行
@@ -441,7 +442,7 @@ function zhima(timeout = 0) {
 
                         console.log(`【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n`)
                         $.message += `【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n`
-
+                        await zhimasx(); //刷新
                         await $.wait(11000)
                         await zhima()
 
@@ -485,7 +486,9 @@ function zhima(timeout = 0) {
 
 //zhimatx
 function zhimatx(timeout = 0) {
+
     return new Promise((resolve) => {
+
         setTimeout(() => {
             let url = {
                 url: `https://api.sxsjyzm.com/api2/loot/userWxCashSubmit`,
