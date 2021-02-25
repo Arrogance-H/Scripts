@@ -12,6 +12,7 @@ boxjs链接  https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zi
 2.15 修复刷新问题,修复部分问题,点夺宝获取ck
 2.24 增加自动提现，需要自行获取对应数值的body，并填写CASH变量
 2.24-2 修复刷新错误，务必更新
+2.25 修复版本更新带来的晶石收取问题
 
 ⚠️一共1个位置 1个ck  👉 1条 Secrets
 多账号换行
@@ -329,11 +330,11 @@ async function all() {
         if (!cookie_is_live) {
             continue;
         }
-        await zhima() //收取晶石
-        await zhimasx(); //刷新
+        await zhima() //收取晶石       
         if (nowTimes.getHours() === 17 && CASH >= 0.3) {
             await zhimatx(); //提现
         }
+        await zhimasx(); //刷新
     }
 }
 //通知
@@ -374,7 +375,7 @@ function zhimasx(timeout = 0) {
                     'Content-Type': `application/x-www-form-urlencoded`,
                     'Connection': `keep-alive`,
                     'Host': `api.sxsjyzm.com`,
-                    'User-Agent': `APP/4.7 CFNetwork/1206 Darwin/20.1.0`,
+                    'User-Agent': `APP/5.0 CFNetwork/1206 Darwin/20.1.0`,
                     'Accept-Language': `zh-cn`
                 },
                 body: zhimabodyVal,
@@ -418,7 +419,7 @@ function zhima(timeout = 0) {
 
 
             let url = {
-                url: `https://api.sxsjyzm.com/api2/loot/quickgetloot`,
+                url: `https://api.sxsjyzm.com/api2/loot/supquickgetloot`,
                 headers: {
                     'Accept': `*/*`,
                     'wToken': ``,
@@ -426,7 +427,7 @@ function zhima(timeout = 0) {
                     'Content-Type': `application/x-www-form-urlencoded`,
                     'Connection': `keep-alive`,
                     'Host': `api.sxsjyzm.com`,
-                    'User-Agent': `APP/4.7 CFNetwork/1206 Darwin/20.1.0`,
+                    'User-Agent': `APP/5.0 CFNetwork/1206 Darwin/20.1.0`,
                     'Accept-Language': `zh-cn`
                 },
                 body: zhimabodyVal,
@@ -440,21 +441,13 @@ function zhima(timeout = 0) {
 
                     if ($.zhima.code == 200) {
 
-                        console.log(`【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n`)
-                        $.message += `【晶石收取】:${time(Number(tts()))}领取晶石成功,等待11秒后进行下次收取\n`
-                        await zhimasx(); //刷新
-                        await $.wait(11000)
-                        await zhima()
+                        console.log(`【晶石收取】:${time(Number(tts()))}领取晶石成功,冷却3小时\n`)
+                        $.message += `【晶石收取】:${time(Number(tts()))}领取晶石成功,冷却3小时\n`
+
 
                     }
 
 
-                    if ($.zhima.code == 1001) {
-
-                        console.log(`【晶石收取】:${$.zhima.mess},间隔11秒才能收取\n`)
-                        $.message += `【晶石收取】:${$.zhima.mess},间隔11秒才能收取\n`
-
-                    }
 
                     if ($.zhima.code == 1002) {
 
@@ -499,7 +492,7 @@ function zhimatx(timeout = 0) {
                     'Content-Type': `application/x-www-form-urlencoded`,
                     'Connection': `keep-alive`,
                     'Host': `api.sxsjyzm.com`,
-                    'User-Agent': `APP/4.7 CFNetwork/1206 Darwin/20.1.0`,
+                    'User-Agent': `APP/5.0 CFNetwork/1206 Darwin/20.1.0`,
                     'Accept-Language': `zh-cn`
                 },
                 body: zhimatxbodyVal,
