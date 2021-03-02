@@ -1,5 +1,5 @@
 /* ziye 
-github地址 https://github.cn/ziye11
+github地址 https://github.com/ziye11
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
 boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.boxjs.json
@@ -7,13 +7,14 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 转载请备注个名字，谢谢
 
 ⚠️悦动族
-点击 http://yuedongzu.yichengw.cn/?id=28844 下载APP  谢谢支持
+点击  http://yuedongzu.yichengw.cn/?id=28844 下载APP 或者APP Store 搜索悦动族
 
 2.28 制作
 3.1 完成
 3.1-2 修复前置报错，修复签到问题
 3.2 调整抽奖机制，一次运行5次抽奖，抽中1000金币则兑奖
 3.2 修复手机不能跑的低级错误,调整提现时间为8点以后
+3.2-3 增加10分钟限速
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -191,6 +192,14 @@ function time(inputTime) {
     s = date.getSeconds();
     return Y + M + D + h + m + s;
 };
+//日期格式化时间戳
+function timecs() {
+    if ($.isNode()) {
+        var date = new Date(newtime).getTime() - 8 * 60 * 60 * 1000
+    } else var date = new Date(newtime).getTime()
+
+    return date;
+};
 //随机udid 大写
 function udid() {
     var s = [];
@@ -245,9 +254,9 @@ async function all() {
     if (!Length) {
         $.msg(
             $.name,
-            '提示：⚠️请点击前往获取http://yuedongzu.yichengw.cn/?id=28844\n',
-            'http://yuedongzu.yichengw.cn/?id=28844', {
-                "open-url": "http://yuedongzu.yichengw.cn/?id=28844"
+            '提示：⚠️请点击前往获取 http://yuedongzu.yichengw.cn/?id=28844\n',
+            ' http://yuedongzu.yichengw.cn/?id=28844', {
+                "open-url": " http://yuedongzu.yichengw.cn/?id=28844"
             }
         );
         return;
@@ -280,24 +289,28 @@ async function all() {
         if (!cookie_is_live) {
             continue;
         }
-        await help_index() //助力活动
-        await home() //首页信息
-        await coupon() //签到
-        await zhuan_index() //任务列表
-        await pophongbaoyu() //红包雨
-        await dk_info() //打卡
-        await water_info() //喝水
-        await sleep_info() //睡觉
-        await ggk() //刮刮卡
-        await $.wait(8000)
-        await lucky() //转盘抽奖
-        await $.wait(1000)
-        await lucky() //转盘抽奖
-        await $.wait(1000)
-        await mystate() //福利
-        await kk_list() //看看赚
-        await news_info() //资讯赚
-        await tixian_html() //提现
+        await jinbi_record() //收益记录
+        if (CZ >= 10) {
+            await help_index() //助力活动
+            await home() //首页信息
+            await coupon() //签到
+            await zhuan_index() //任务列表
+            await pophongbaoyu() //红包雨
+            await dk_info() //打卡
+            await water_info() //喝水
+            await sleep_info() //睡觉
+            await ggk() //刮刮卡
+            await $.wait(8000)
+            await lucky() //转盘抽奖
+            await $.wait(1000)
+            await lucky() //转盘抽奖
+            await $.wait(1000)
+            await mystate() //福利
+            await kk_list() //看看赚
+            await news_info() //资讯赚
+            await tixian_html() //提现
+        }
+
 
     }
 }
@@ -354,6 +367,44 @@ function user(timeout = 0) {
         }, timeout)
     })
 }
+
+
+//收益记录
+function jinbi_record(timeout = 0) {
+    return new Promise(async (resolve) => {
+        setTimeout(() => {
+                let url = {
+                    url: `https://yuedongzu.yichengw.cn/apps/user/jinbi_record?`,
+                    headers: header,
+                    body: `page=1&page_limit=25&`,
+                }
+                $.post(url, async (err, resp, data) => {
+                    try {
+                        if (logs) $.log(`${O}, 收益记录🚩: ${data}`);
+                        $.jinbi_record = JSON.parse(data);
+                        if ($.jinbi_record.code == 200) {
+if($.jinbi_record.data[0].add_date) {
+                            newtime = $.jinbi_record.data[0].add_date + 'T' + $.jinbi_record.data[0].add_time
+                            CZ = ((tts() - timecs(newtime)) / 60000).toFixed(0)
+
+                            console.log(`收益记录：距离上次收益${CZ}分钟，已限速10分钟\n`);
+                            $.message += `【收益记录】：距离上次收益${CZ}分钟，已限速10分钟\n`;
+
+}else CZ=11
+
+                        }
+                    } catch (e) {
+                        $.logErr(e, resp);
+                    } finally {
+                        resolve()
+                    }
+                })
+            },
+            timeout)
+    })
+}
+
+
 //首页信息
 function home(timeout = 0) {
     return new Promise((resolve) => {
