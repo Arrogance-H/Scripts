@@ -989,7 +989,7 @@ function sleep_start(timeout = 0) {
     return new Promise((resolve) => {
         setTimeout(() => {
             let url = {
-                url: `https://yuedongzu.yichengw.cn/mini/sleep_start?`,
+                url: `https://yuedongzu.yichengw.cn/apps/sleep_start?`,
                 headers: header,
             }
             $.post(url, async (err, resp, data) => {
@@ -1014,7 +1014,7 @@ function sleep_end(timeout = 0) {
     return new Promise((resolve) => {
         setTimeout(() => {
             let url = {
-                url: `https://yuedongzu.yichengw.cn/mini/sleep_end?`,
+                url: `https://yuedongzu.yichengw.cn/apps/sleep_end?`,
                 headers: header,
             }
             $.post(url, async (err, resp, data) => {
