@@ -1,4 +1,4 @@
-name: 汽车之家
+name: 汽车之家极速版
 
 on:
   workflow_dispatch:
