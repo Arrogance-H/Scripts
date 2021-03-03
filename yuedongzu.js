@@ -14,7 +14,8 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 3.1-2 修复前置报错，修复签到问题
 3.2 调整抽奖机制，一次运行5次抽奖，抽中1000金币则兑奖
 3.2 修复手机不能跑的低级错误,调整提现时间为8点以后
-3.2-3 增加10分钟限速
+3.2-3 增加10分钟限速，修复用户名判定，修复视频助力
+3.3 完善提现判定，修复睡觉
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 25次以上就行 
 
@@ -58,6 +59,7 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
+CZ = 10
 const yuedongzutokenArr = [];
 let yuedongzutokenVal = ``;
 let middleyuedongzuTOKEN = [];
@@ -240,7 +242,6 @@ if (isGetCookie) {
 } else {
     !(async () => {
         await all();
-        await $.wait(1000)
         await msgShow();
     })()
     .catch((e) => {
@@ -304,7 +305,6 @@ async function all() {
             await lucky() //转盘抽奖
             await $.wait(1000)
             await lucky() //转盘抽奖
-            await $.wait(1000)
             await mystate() //福利
             await kk_list() //看看赚
             await news_info() //资讯赚
@@ -346,12 +346,12 @@ function user(timeout = 0) {
                 try {
                     if (logs) $.log(`${O}, 用户名🚩: ${data}`);
                     $.user = JSON.parse(data);
-                    if ($.user.username) {
+                    if ($.user.uid) {
                         console.log(`\n${O}\n========== ${$.user.username} ==========\n微信绑定：${$.user.wx_username},今日收益：${$.user.day_jinbi/10000}元\n现金余额：${$.user.money}元,累计收益：${$.user.leiji_jinbi/10000}元\n`)
                         $.message += `\n${O}\n========== 【${$.user.username}】 ==========\n【微信绑定】：${$.user.wx_username},今日收益：${$.user.day_jinbi/10000}元\n【现金余额】：${$.user.money}元,累计收益：${$.user.leiji_jinbi/10000}元\n`;
                         resolve(true);
                     }
-                    if (!$.user.username) {
+                    if (!$.user.uid) {
                         $.msg(O, time(Number(tts())) + "❌❌❌COOKIE失效");
                         if ($.isNode()) {
                             notify.sendNotify(O, time(Number(tts())) + "❌❌❌COOKIE失效");
@@ -383,14 +383,14 @@ function jinbi_record(timeout = 0) {
                         if (logs) $.log(`${O}, 收益记录🚩: ${data}`);
                         $.jinbi_record = JSON.parse(data);
                         if ($.jinbi_record.code == 200) {
-if($.jinbi_record.data[0].add_date) {
-                            newtime = $.jinbi_record.data[0].add_date + 'T' + $.jinbi_record.data[0].add_time
-                            CZ = ((tts() - timecs(newtime)) / 60000).toFixed(0)
+                            if ($.jinbi_record.data && $.jinbi_record.data[0].add_date) {
+                                newtime = $.jinbi_record.data[0].add_date + 'T' + $.jinbi_record.data[0].add_time
+                                CZ = ((tts() - timecs(newtime)) / 60000).toFixed(0)
 
-                            console.log(`收益记录：距离上次收益${CZ}分钟，已限速10分钟\n`);
-                            $.message += `【收益记录】：距离上次收益${CZ}分钟，已限速10分钟\n`;
+                                console.log(`收益记录：距离上次收益${CZ}分钟，已限速10分钟\n`);
+                                $.message += `【收益记录】：距离上次收益${CZ}分钟，已限速10分钟\n`;
 
-}else CZ=11
+                            } 
 
                         }
                     } catch (e) {
@@ -690,10 +690,13 @@ function help_index(timeout = 0) {
                     if ($.help_index.code == 200) {
                         console.log(`助力活动：现金${$.help_index.jinbi}元,差${$.help_index.diff_jinbi}元,时间剩余${($.help_index.time/3600).toFixed(0)}小时\n`);
                         $.message += `【助力活动】：现金${$.help_index.jinbi}元,差${$.help_index.diff_jinbi}元,时间剩余${($.help_index.time/3600).toFixed(0)}小时\n`;
-                        //nonce_str = $.help_index.nonce_str
-                        //if ($.help_index.diff_jinbi > 0) {
-                        //await help_click()
-                        //}
+                        nonce_str = $.help_index.nonce_str
+                        if ($.help_index.diff_jinbi > 0 && $.help_index.btn_st == 0) {
+                            await help_click()
+                        } else {
+                            console.log(`视频助力：今日已达到上限\n`);
+                            $.message += `【视频助力】：今日已达到上限\n`;
+                        }
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -723,6 +726,9 @@ function help_click(timeout = 0) {
                     if ($.help_click.code == 200) {
                         console.log(`视频助力：${$.help_click.jinbi/10000}元,领取成功\n`);
                         $.message += `【视频助力】：${$.help_click.jinbi/10000}元,领取成功\n`;
+                        tid = 15
+                        pos = 1
+                        await index()
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -1073,8 +1079,8 @@ function sleep_end(timeout = 0) {
                     if (logs) $.log(`${O}, 结束睡觉🚩: ${data}`);
                     $.sleep_end = JSON.parse(data);
                     if ($.sleep_end.code == 200) {
-                        console.log(`结束睡觉：结束睡觉\n`);
-                        $.message += `【结束睡觉】：结束睡觉\n`;
+                        console.log(`结束睡觉：结束睡觉，产生${$.sleep_end.jinbi}金币\n`);
+                        $.message += `【结束睡觉】：结束睡觉，产生${$.sleep_end.jinbi}金币\n`;
                         taskid = $.sleep_end.taskid
                         nonce_str = $.sleep_end.nonce_str
                         await sleep_done() //睡觉奖励
@@ -1102,8 +1108,8 @@ function sleep_done(timeout = 0) {
                     if (logs) $.log(`${O}, 睡觉奖励🚩: ${data}`);
                     $.sleep_done = JSON.parse(data);
                     if ($.sleep_done.code == 200) {
-                        console.log(`睡觉奖励：睡觉奖励\n`);
-                        $.message += `【睡觉奖励】：睡觉奖励\n`;
+                        console.log(`睡觉奖励：睡觉奖励领取${$.sleep_done.jinbi}金币\n`);
+                        $.message += `【睡觉奖励】：睡觉奖励领取${$.sleep_done.jinbi}金币\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -1356,13 +1362,13 @@ function mystate(timeout = 0) {
                         if ($.mystate.box_st == 0) {
                             await box_click() //宝箱
                         }
-                        if ($.mystate.st == 2) {
-                            console.log(`首页福利：已完成\n`);
-                            $.message += `【首页福利】：已完成\n`;
+                        if ($.mystate.jindan_st == 2) {
+                            console.log(`金蛋福利：已完成\n`);
+                            $.message += `【金蛋福利】：已完成\n`;
                         }
-                        if ($.mystate.st == 2) {
-                            console.log(`首页福利：已完成\n`);
-                            $.message += `【首页福利】：已完成\n`;
+                        if ($.mystate.box_st == 2) {
+                            console.log(`宝箱福利：已完成\n`);
+                            $.message += `【宝箱福利】：已完成\n`;
                         }
                     }
                 } catch (e) {
@@ -1511,6 +1517,9 @@ function kk_list(timeout = 0) {
                         console.log(`看看赚列表：下个任务：${is_ok.mini_name}\n`);
                         $.message += `【看看赚列表】：下个任务：${is_ok.mini_name}\n`;
                         await kk_click() //看看赚执行
+                    } else {
+                        console.log(`看看赚：已完成\n`);
+                        $.message += `【看看赚】：已完成\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -1591,7 +1600,7 @@ function kk_done(timeout = 0) {
                 try {
                     if (logs) $.log(`${O}, 看看赚完成🚩: ${data}`);
                     $.kk_done = JSON.parse(data);
-                    if ($.kk_done.msg) {
+                    if ($.kk_done.code == 200) {
                         console.log(`看看赚完成：获得${$.kk_done.jinbi}金币\n`);
                         $.message += `【看看赚完成】：获得${$.kk_done.jinbi}金币\n`;
                         tid = 16
@@ -1694,8 +1703,8 @@ function tixian_html(timeout = 0) {
                         }
                         console.log(`提现券：剩余${$.tixian_html.tixian_coupon}张券\n${jine2.jine}元：需要${jine2.cond}张券\n${jine3.jine}元：需要${jine3.cond}张券\n`);
                         $.message += `【提现券】：剩余${$.tixian_html.tixian_coupon}张券\n【${jine2.jine}元】：需要${jine2.cond}张券\n【${jine3.jine}元】：需要${jine3.cond}张券\n`;
-                        if (!day_tixian_tip && nowTimes.getHours() >= 8) {
-                            if (CASH == 0.3 && $.user.money >= CASH) {
+                        if (!day_tixian_tip && nowTimes.getHours() >= 8 && ($.user.wx_username != "" || $.user.is_weixin == 1)) {
+                            if (CASH == 0.3 && $.user.money >= CASH && $.user.day_jinbi >= 6000) {
                                 await tixian() //提现
                             }
                             if (CASH == 1 && $.tixian_html.tixian_coupon >= 8 && $.user.money >= CASH) {
@@ -1718,7 +1727,7 @@ function tixian_html(timeout = 0) {
                                     CASH = 5
                                 } else if ($.user.money > 1 && $.tixian_html.tixian_coupon >= 8) {
                                     CASH = 1
-                                } else if ($.user.money > 5) {
+                                } else if ($.user.money > 5 && $.user.day_jinbi >= 6000) {
                                     CASH = 0.3
                                 }
                                 if (CASH != 888) {
