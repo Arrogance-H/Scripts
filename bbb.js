@@ -300,7 +300,7 @@ async function all() {
         }
         await userjinbi() //收益记录
         if (CZ >= 10) {
-            await help_index() //助力活动
+            //await help_index() //助力活动
             await home() //首页信息
             await jindan_click() //首页金蛋
             await sign_html() //签到
