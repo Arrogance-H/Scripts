@@ -82,7 +82,14 @@ if ($.isNode()) {
           cfzhdArr.push(cfzhd[item])
         }
     });
-} else {cfzurlArr.push($.getdata('cfzurl'))
+}
+
+
+!(async () => {
+  if (typeof $request !== "undefined") {
+    await cfzck()
+   
+  } else {cfzurlArr.push($.getdata('cfzurl'))
     cfzhdArr.push($.getdata('cfzhd'))
     cfzsbhdArr.push($.getdata('cfzsbhd'))
     let cfzcount = ($.getval('cfzcount') || '1');
@@ -91,21 +98,6 @@ if ($.isNode()) {
     cfzhdArr.push($.getdata(`cfzhd${i}`))
     cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
   }
-
-
-!(async () => {
-  if (typeof $request !== "undefined") {
-    await cfzck()
-   
-  } /*else {cfzurlArr.push($.getdata('cfzurl'))
-    cfzhdArr.push($.getdata('cfzhd'))
-    cfzsbhdArr.push($.getdata('cfzsbhd'))
-    let cfzcount = ($.getval('cfzcount') || '1');
-  for (let i = 2; i <= cfzcount; i++) {
-    cfzurlArr.push($.getdata(`cfzurl${i}`))
-    cfzhdArr.push($.getdata(`cfzhd${i}`))
-    cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
-  }*/
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
     cfzhdArr.forEach((o, i) => {
