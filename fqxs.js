@@ -72,6 +72,21 @@ if ($.isNode()) {
   } else {
    fqxs= process.env.FQXS.split()
   };
+   
+    Object.keys(fqxsurl).forEach((item) => {
+        if (fqxsurl[item]) {
+          fqxsurlArr.push(fqxsurl[item])
+        }
+    });
+    Object.keys(fqxs).forEach((item) => {
+        if (fqxs[item]) {
+          fqxsArr.push(fqxs[item])
+        }
+    });
+   
+   
+   
+   
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
