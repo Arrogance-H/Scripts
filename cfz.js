@@ -69,11 +69,20 @@ let cfzhd = ($.getval('cfzhd') || '{\"Connection\":\"keep-alive\",\"Accept-Encod
 let concurrency = ($.getval('cfzConcurrency') || '1') - 0; // 并发执行任务的账号数，默单账号循环执行
 concurrency = concurrency < 1 ? 1 : concurrency;
 let sdid = '';sdlqid = '';tc = 0
-!(async () => {
-  if (typeof $request !== "undefined") {
-    await cfzck()
-   
-  } else {cfzurlArr.push($.getdata('cfzurl'))
+
+
+if ($.isNode()) {  
+  Object.keys(cfzurl).forEach((item) => {
+        if (cfzurl[item]) {
+          cfzurlArr.push(cfzurl[item])
+        }
+    });
+  Object.keys(cfzhd).forEach((item) => {
+        if (cfzhd[item]) {
+          cfzhdArr.push(cfzhd[item])
+        }
+    });
+} else {cfzurlArr.push($.getdata('cfzurl'))
     cfzhdArr.push($.getdata('cfzhd'))
     cfzsbhdArr.push($.getdata('cfzsbhd'))
     let cfzcount = ($.getval('cfzcount') || '1');
@@ -82,6 +91,21 @@ let sdid = '';sdlqid = '';tc = 0
     cfzhdArr.push($.getdata(`cfzhd${i}`))
     cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
   }
+
+
+!(async () => {
+  if (typeof $request !== "undefined") {
+    await cfzck()
+   
+  } /*else {cfzurlArr.push($.getdata('cfzurl'))
+    cfzhdArr.push($.getdata('cfzhd'))
+    cfzsbhdArr.push($.getdata('cfzsbhd'))
+    let cfzcount = ($.getval('cfzcount') || '1');
+  for (let i = 2; i <= cfzcount; i++) {
+    cfzurlArr.push($.getdata(`cfzurl${i}`))
+    cfzhdArr.push($.getdata(`cfzhd${i}`))
+    cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
+  }*/
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
     cfzhdArr.forEach((o, i) => {
