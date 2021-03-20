@@ -48,7 +48,7 @@ if "AUTO_TAKE_OUT" in os.environ:
 devices = []
 notify_time = 23                            # 通知时间,24小时制,默认19
 XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默认打开;关闭置0
-UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.0.12 kdtunion_iting/1.0 iting(main)/1.0.12/ios_1"
+UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/2.0.12 kdtunion_iting/1.0 iting(main)/2.0.12/ios_1"
 # 非iOS设备的需要的自行修改,自己抓包 与cookie形式类似
 
 def str2dict(str_cookie):
