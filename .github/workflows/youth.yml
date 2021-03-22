@@ -48,6 +48,7 @@ jobs:
             YOUTH_HEADER4: ${{ secrets.YOUTH_HEADER4 }}
             YOUTH_READBODY4: ${{ secrets.YOUTH_READBODY4 }}
             YOUTH_READTIMEBODY4: ${{ secrets.YOUTH_READTIMEBODY4 }}
+            YOUTH_WITHDRAWBODY4: ${{ secrets.YOUTH_WITHDRAWBODY4 }}
             YOUTH_SHAREBODY4: ${{ secrets.YOUTH_SHAREBODY4 }}
             YOUTH_STARTBODY4: ${{ secrets.YOUTH_STARTBODY4 }}
             BARK: ${{ secrets.BARK }}  #非必须 bark通知
