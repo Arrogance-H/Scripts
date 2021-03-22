@@ -35,7 +35,7 @@ jobs:
         run: |
           node bbb.js
         env:
-          BBB_COOKIE: ${{ secrets.BBB_COOKIE }}
+          BBB_bububaoTOKEN: ${{ secrets.BBB_bububaoTOKEN }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
