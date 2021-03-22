@@ -60,7 +60,7 @@ let qmydtokenVal = ``;
 let middleqmydTOKEN = [];
 if ($.isNode()) {
     // 没有设置 QMYD_CASH 则默认为 0 不兑换
-    CASH = process.env.QMYD_CASH || 50;
+    CASH = process.env.QMYD_CASH || 888;
 }
 if ($.isNode() && process.env.QMYD_qmydTOKEN) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
