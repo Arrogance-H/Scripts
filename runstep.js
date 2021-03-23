@@ -10,7 +10,7 @@ const logs = 0;
 const notifyInterval = 1;
 //通知风格
 let tz = '';
-let version = $.getval('version') || "1.5.1"; //APP版本号,更新请到APP更改
+let version = $.getval('version') || "1.5.2"; //APP版本号,更新请到APP更改
 
 //////////////////////////////////////////////////////////////////
 //hour&min
