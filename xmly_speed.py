@@ -27,10 +27,10 @@ cookiesList = [cookies1, ]   # 多账号准备
 # 默认不自动提现
 autoTakeOut = False
 # 提现金额
-amount = 20
-takeOutType = 1
+amount = 5
+takeOutType = 2
 # 提现账户: 1 -> 支付宝 2 -> 微信
-thirdPayType = 1
+thirdPayType = 2
 
 # ac读取环境变量
 if "XMLY_SPEED_COOKIE" in os.environ:
