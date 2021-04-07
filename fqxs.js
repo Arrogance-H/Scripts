@@ -30,9 +30,9 @@ const notify = $.isNode() ?require('./sendNotify') : '';
 let status,no;
 status = (status = ($.getval("fqxsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const fqxsurlArr = [],fqxsArr = []
-let fqxaurl = ($.getval('fqxsurl') || '&_request_from=web&ip=192.168.1.104&caid1=bc919cffae61eb11563b5088236943b9&version_code=405&app_name=novelapp&vid=9A28C532-6BBB-4B93-9996-8247E29F5663&device_id=1724455858217326&channel=App%20Store&resolution=1125*2436&aid=1967&version_name=4.0.5.32&update_version_code=40532&gender=0&cdid=1DA5E861-573A-402B-9BD5-84D66022CFA1&idfv=9A28C532-6BBB-4B93-9996-8247E29F5663&ac=wifi&os_version=14.4&ssmix=a&ab_sdk_version=2379407,2413569&caid2=&device_platform=iphone&iid=3167025869886872&device_type=iPhone13,2&idfa=00000000-0000-0000-0000-000000000000')
-let fqxs= ($.getval('fqxs') || '&_request_from=web&ip=192.168.1.104&caid1=bc919cffae61eb11563b5088236943b9&version_code=405&app_name=novelapp&vid=9A28C532-6BBB-4B93-9996-8247E29F5663&device_id=1724455858217326&channel=App%20Store&resolution=1125*2436&aid=1967&version_name=4.0.5.32&update_version_code=40532&gender=0&cdid=1DA5E861-573A-402B-9BD5-84D66022CFA1&idfv=9A28C532-6BBB-4B93-9996-8247E29F5663&ac=wifi&os_version=14.4&ssmix=a&ab_sdk_version=2379407,2413569&caid2=&device_platform=iphone&iid=3167025869886872&device_type=iPhone13,2&idfa=00000000-0000-0000-0000-000000000000')
-let host = ($.getval('host') || 'i-lq.snssdk.com')
+let fqxaurl = $.getdata('fqxsurl')
+let fqxs= $.getdata('fqxs')
+let host =  ($.getval('host') || 'i-lq.snssdk.com')
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
