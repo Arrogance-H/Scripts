@@ -50,7 +50,7 @@ let isfqxsck = typeof $request !== 'undefined'
 if (isfqxsck) {
    fqxsck();
    $.done()
-}
+}/*
 if ($.isNode()) {
    if (process.env.FQXSURL && process.env.FQXSURL .indexOf('#') > -1) {
    fqxsurl = process.env.FQXSURL .split('#');
@@ -81,7 +81,7 @@ if ($.isNode()) {
   for (let i = 2; i <= fqxscount; i++) {
     fqxsurlArr.push($.getdata(`fqxsurl${i}`))
     fqxsArr.push($.getdata(`fqxs${i}`))
-  }
+  }*/
 }
 !(async () => {
 if (!fqxsurlArr[0] && !fqxsArr[0] ) {
