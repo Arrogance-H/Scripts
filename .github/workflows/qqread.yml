@@ -1,4 +1,4 @@
-name: QQ阅读
+name: jdtq
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: qqread
+    types: jdtq
 jobs:
   build:
 
@@ -31,11 +31,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【QQ阅读】'
+      - name: '运行 【jdtq】'
         run: |
-          node qqread.js
+          node jdtq.js
         env:
-          QQ_QQreadURL: ${{ secrets.QQ_QQreadURL }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
