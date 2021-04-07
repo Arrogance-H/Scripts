@@ -50,7 +50,7 @@ let isfqxsck = typeof $request !== 'undefined'
 if (isfqxsck) {
    fqxsck();
    $.done()
-}/*
+}
 if ($.isNode()) {
    if (process.env.FQXSURL && process.env.FQXSURL .indexOf('#') > -1) {
    fqxsurl = process.env.FQXSURL .split('#');
@@ -72,6 +72,16 @@ if ($.isNode()) {
   } else {
    fqxs= process.env.FQXS.split()
   };
+   Object.keys(fqxsurl).forEach((item) => {
+        if (fqxsurl[item]) {
+          fqxsurlArr.push(fqxsurl[item])
+        }
+    });
+    Object.keys(fqxs).forEach((item) => {
+        if (fqxs[item]) {
+          fqxsArr.push(fqxs[item])
+        }
+    });
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
@@ -82,7 +92,7 @@ if ($.isNode()) {
     fqxsurlArr.push($.getdata(`fqxsurl${i}`))
     fqxsArr.push($.getdata(`fqxs${i}`))
   }
-}*/
+}
 !(async () => {
 if (!fqxsurlArr[0] && !fqxsArr[0] ) {
     $.msg($.name, '【提示】请先获取🍅番茄小说一cookie')
