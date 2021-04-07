@@ -444,7 +444,7 @@ notifyInterval = process.env.JDTQ_notifyInterval || "2";
       COOKIES_SPLIT
     )} =============\n`
     );
-
+/*
     if (
         process.env.JDTQ_jdtquserBODY &&
         process.env.JDTQ_jdtquserBODY.indexOf(COOKIES_SPLIT) > -1
@@ -1018,7 +1018,7 @@ notifyInterval = process.env.JDTQ_notifyInterval || "2";
             jdtqjclqbodyArr.push(middlejdtqjclqBODY[item]);
         }
     });
-
+*/
 } else if ($.isNode() && COOKIE.datas && COOKIE.datas[0].val != '') {
     console.log(
         `============ cookie方式为：boxjs复制会话 =============\n`
