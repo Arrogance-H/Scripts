@@ -51,13 +51,13 @@ status = (status = ($.getval("vshstatus") || "1") ) > 1 ? `${status}` : ""; // �
 const vshurlArr = [], vshhdArr = [],vshdspbodyArr = [],vshspbodyArr = [],vshqdbodyArr = [],vsh1bodyArr = [],vsh2bodyArr = [],vshbodyArr = [],vshcount = ''
 let times = Math.round(Date.now() / 1000)
 let vshurl = ($.getval('vshurl') || 'http://iosvsh.zwzanwm.cn/app/svjl","vshhd')
-let vshhd = ($.getval('vshhd') || '{\"Accept-Encoding\":\"gzip, deflate\",\"Accept\":\"*/*\",\"Connection\":\"keep-alive\",\"Content-Type\":\"application/json\",\"Host\":\"iosvsh.zwzanwm.cn\",\"User-Agent\":\"vsh/1.13 (iPhone; iOS 14.4.2; Scale/3.00)\",\"Content-Length\":\"2\",\"Accept-Language\":\"zh-Hans-CN;q=1\",\"token\":\"39B9B4F9-B529-43C9-9442-E4C2004F7729\"}')
-let vshdspbody = ($.getval('vshdspbody') || '{\"isDouble\":\"0\",\"moneyId\":\"0\",\"mark\":\"VqwJPbB1\\/QCww0\\/t1HXwfavYHIeO+MTcKqm0sRV4FswcM8\\/8lLxQBb1ZIb4\\/oKczhlg+1IPPoViaCrAj9nas5X26jxlF+nVrSxo1vlpwmOo=\",\"type\":\"7\",\"seconds\":\"23\"}')
-let vshspbody = ($.getval('vshspbody') ||'{\"isDouble\":\"1\",\"moneyId\":\"0\",\"mark\":\"ZqfkdUYHrY3emi2ZUwZIkobj1q9yvrAXpsPoTe7bvrEj18HxPI3wRcgSbkDj68oEa8PG61QYtiHVJhp6GW6mDGRM3vWV5u+SRCEwxfdmjJA=\",\"type\":\"1\",\"seconds\":\"40\"}')
-let vsh1body = ($.getval('vsh1body') || '{\"isDouble\":\"0\",\"moneyId\":\"0\",\"mark\":\"1B+DSGqrx0g2qekKQqCpbnrhGTiEfFUm+32aoFOaFTCy2YfI21fZ0tEGG2Uh2F758SFunSDm6ZnhAAlVXt+DovaSVjbflD7d\\/3d33jWySCg=\",\"type\":\"13\",\"seconds\":\"35\"}')
-let vsh2body = ($.getval('vsh2body') || '{\"isDouble\":\"0\",\"moneyId\":\"0\",\"mark\":\"ik1Zr9FktiTVpBV3tWnXIRn3qpPDSfdfRCTXnDK6fcig+PnoIdpeBX6WRlAg+6GyT+JX9rzwMypRxn58rEYdkv8oevQpnMN\\/YzgSXMo9Swg=\",\"type\":\"2\",\"seconds\":\"38\"}')
-let vshbody = ($.getval('vshbody') || '{\"isDouble\":\"0\",\"moneyId\":\"0\",\"mark\":\"SNB3jN2z+9+Fd8Mbi6RTH7buF2q+5TcwmIUORFj6YXvihhsGoSSHIE1+uoo4APgdMRndLPMi1NGGcunYnhlfMFUbd8I3cUwOriCxIYM8jZA=\",\"type\":\"8\",\"seconds\":\"54\"}')
-let vshqdbody = ($.getval('vshqdbody') || '{\"transId\":\"Es6sx014oXjMbyi9bt\\/uTMkwBFx7M8qdhTC99KpHcEgnh6lQOmCggVXLeF6e7ZBw\",\"key\":\"12\"}"}')
+let vshhd = ($.getval('vshhd') || '{"Accept-Encoding":"gzip, deflate","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/json","Host":"iosvsh.zwzanwm.cn","User-Agent":"vsh/1.13 (iPhone; iOS 14.4.2; Scale/3.00)","Content-Length":"2","Accept-Language":"zh-Hans-CN;q=1","token":"39B9B4F9-B529-43C9-9442-E4C2004F7729"}')
+let vshdspbody = ($.getval('vshdspbody') || '{"isDouble":"0","moneyId":"0","mark":"VqwJPbB1\/QCww0\/t1HXwfavYHIeO+MTcKqm0sRV4FswcM8\/8lLxQBb1ZIb4\/oKczhlg+1IPPoViaCrAj9nas5X26jxlF+nVrSxo1vlpwmOo=","type":"7","seconds":"23"}')
+let vshspbody = ($.getval('vshspbody') ||'{"isDouble":"1","moneyId":"0","mark":"ZqfkdUYHrY3emi2ZUwZIkobj1q9yvrAXpsPoTe7bvrEj18HxPI3wRcgSbkDj68oEa8PG61QYtiHVJhp6GW6mDGRM3vWV5u+SRCEwxfdmjJA=","type":"1","seconds":"40"}')
+let vsh1body = ($.getval('vsh1body') || '{"isDouble":"0","moneyId":"0","mark":"1B+DSGqrx0g2qekKQqCpbnrhGTiEfFUm+32aoFOaFTCy2YfI21fZ0tEGG2Uh2F758SFunSDm6ZnhAAlVXt+DovaSVjbflD7d\/3d33jWySCg=","type":"13","seconds":"35"}')
+let vsh2body = ($.getval('vsh2body') || '{"isDouble":"0","moneyId":"0","mark":"ik1Zr9FktiTVpBV3tWnXIRn3qpPDSfdfRCTXnDK6fcig+PnoIdpeBX6WRlAg+6GyT+JX9rzwMypRxn58rEYdkv8oevQpnMN\/YzgSXMo9Swg=","type":"2","seconds":"38"}')
+let vshbody = ($.getval('vshbody') || '{"isDouble":"0","moneyId":"0","mark":"SNB3jN2z+9+Fd8Mbi6RTH7buF2q+5TcwmIUORFj6YXvihhsGoSSHIE1+uoo4APgdMRndLPMi1NGGcunYnhlfMFUbd8I3cUwOriCxIYM8jZA=","type":"8","seconds":"54"}')
+let vshqdbody = ($.getval('vshqdbody') || '{"transId":"Es6sx014oXjMbyi9bt\/uTMkwBFx7M8qdhTC99KpHcEgnh6lQOmCggVXLeF6e7ZBw","key":"12"}')
 let vshsp = ($.getval('vshsp') || '0');//短视频刷金币开关,短视频刷金币因为时间很长,且不知道上限,默认为关闭状态,脚本只会运行除了短视频之外的任务,需要刷短视频金币的,建议先跑完日常任务再去boxjs里把短视频刷金币开关改为1,之后脚本只会运行刷短视频任务。。
 !(async () => {
   if (typeof $request !== "undefined") {
