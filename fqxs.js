@@ -81,8 +81,8 @@ if ($.isNode()) {
   for (let i = 2; i <= fqxscount; i++) {
     fqxsurlArr.push($.getdata(`fqxsurl${i}`))
     fqxsArr.push($.getdata(`fqxs${i}`))
-  }*/
-}
+  }
+}*/
 !(async () => {
 if (!fqxsurlArr[0] && !fqxsArr[0] ) {
     $.msg($.name, '【提示】请先获取🍅番茄小说一cookie')
