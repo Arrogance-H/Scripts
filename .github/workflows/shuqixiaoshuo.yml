@@ -35,6 +35,31 @@ jobs:
         run: |
           node shuqixiaoshuo.js
         env:
+          lrb: ${{ secrets.lrb }}
+          lrk: ${{ secrets.lrk }}
+          splrb: ${{ secrets.splrb }}
+          splrk: ${{ secrets.splrk }}
+          wb: ${{ secrets.wb }}
+          bb: ${{ secrets.bb }}
+          rb: ${{ secrets.rb }}
+          snb: ${{ secrets.snb }}
+          rlb: ${{ secrets.rlb }}
+          vlb: ${{ secrets.vlb }}
+          llb: ${{ secrets.llb }}
+          lru: ${{ secrets.lru }}
+          lrbv: ${{ secrets.lrbv }}
+          sb: ${{ secrets.sb }}
+          btu: ${{ secrets.btu }}
+          btb: ${{ secrets.btb }}
+          spsnb: ${{ secrets.spsnb }}
+          sprcu: ${{ secrets.sprcu }}
+          sprcb: ${{ secrets.sprcb }}
+          sp1v: ${{ secrets.sp1v }}
+          sp2v: ${{ secrets.sp2v }}
+          spsb: ${{ secrets.spsb }}
+          liu: ${{ secrets.liu }}
+          viu: ${{ secrets.viu }}
+          spviu: ${{ secrets.spviu }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
