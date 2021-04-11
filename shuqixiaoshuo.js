@@ -41,103 +41,145 @@ let today2 = formatDateTime(todaytimes);
 ////////////////////////// 【CenBoMin-Cookie】///////////////////////////////////////
 
 const loadresourcebodyArr = [];
-let loadresourcebodyVal = ($.getval("loadresourcebodyVal") || "params=%7B%22resources%22%3A%7B%22ShuqiBsDailyTask%22%3A%7B%7D%7D%7D&userId=2016222669&timeStamp=1618072865&sign=3efffca666d1256765d9cdad6e1f3c18&from=ShuqiTab&serviceWorkerOn=1&stopPullRefresh=1&sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000");
+let loadresourcebodyVal = "";
 
 const loadresourcekeyArr = [];
-let loadresourcekeyVal = ($.getval("loadresourcekeyVal") || "{\"Origin\":\"https://render-web.shuqireader.com\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Connection\":\"keep-alive\",\"Content-Type\":\"application/x-www-form-urlencoded\",\"Accept\":\"application/json, text/plain, */*\",\"Host\":\"render.shuqireader.com\",\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/1.0.5.0) WindVane/8.6.1 Shuqi-Lite (iPhone13,2__shuqi__v1.0.5.0) 1125x2436 Winding(WV_2) WK\",\"Referer\":\"https://render-web.shuqireader.com/render/lite-welfare/page/golden_house/?from=ShuqiTab&serviceWorkerOn=1&stopPullRefresh=1&sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000\",\"Content-Length\":\"1025\",\"Accept-Language\":\"zh-cn\"}");
+let loadresourcekeyVal = "";
 
 const sploadresourcebodyArr = [];
-let sploadresourcebodyVal = ($.getval("sploadresourcebodyVal") || "params=%7B%22resources%22%3A%7B%22ShuqiBsDailyTask%22%3A%7B%7D%7D%7D&userId=2016222669&timeStamp=1618072937&sign=eed5e2945c4c1b8792c2a0bd82ea1d04&from=ShuqiTab&serviceWorkerOn=1&stopPullRefresh=1&sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000");
+let sploadresourcebodyVal = "";
 
 const sploadresourcekeyArr = [];
-let sploadresourcekeyVal = ($.getval("sploadresourcekeyVal") || "{\"Origin\":\"https://render-web.shuqireader.com\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Connection\":\"keep-alive\",\"Content-Type\":\"application/x-www-form-urlencoded\",\"Accept\":\"application/json, text/plain, */*\",\"Host\":\"render.shuqireader.com\",\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/1.0.5.0) WindVane/8.6.1 Shuqi-Lite (iPhone13,2__shuqi__v1.0.5.0) 1125x2436 Winding(WV_2) WK\",\"Referer\":\"https://render-web.shuqireader.com/render/lite-welfare/page/golden_house/?from=ShuqiTab&serviceWorkerOn=1&stopPullRefresh=1&sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000\",\"Content-Length\":\"1025\",\"Accept-Language\":\"zh-cn\"}");
+let sploadresourcekeyVal = "";
 
 const withdrawbodyArr = [];
-let withdrawbodyVal = ($.getval("withdrawbodyVa") || "userId=2016222669&position=1&_public=from%3DShuqiTab%26serviceWorkerOn%3D1%26stopPullRefresh%3D1%26sdk%3D14.4.2%26ustatus%3D1%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26idfa%3D00000000-0000-0000-0000-000000000000");
+let withdrawbodyVal = "";
 
 const bubblebodyArr = [];
-let bubblebodyVal = ($.getval("bubblebodyVal") || "platform=1&requestSrc=h5&timestamp=1618072538&userId=2016222669&sqSv=1.0&sign=2b0fe27e53692a04ab1518658178f06c&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26stopPullRefresh%3D1%26from%3DShuqiTab%26upf%3D20665%257CTag%2540Bucket%254028%2540280070236%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let bubblebodyVal = "";
 
 const receivebodyArr = [];
-let receivebodyVal = ($.getval("receivebodyVal") || "platform=1&src=&timestamp=1618071704&userId=2016222669&sqSv=1.0&appVer=4.3.4.0&placeId=&sign=e658639da502221d645de5736bc221ea&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let receivebodyVal = "";
 
 const signinactionbodyArr = [];
-let signinactionbodyVal = ($.getval("signinactionbodyVal") || "clientTimestamp=1618071587&position=501&userId=2016222669&signInType=1&wua=HIVW_TZeFMagcuqBjYBa%2Fe%2F4wcXmj5Wy8TakFzr7UHFDrILImq6aDAXZVcQADn%2FSp%2FoaQK2kAjawPvxnlnRirBH7jRrlc2xiuxTAcvJM%2BhT4XU0YU4CfkSkKAWHDijiSaBvmUXAqUGRXJJfD5SwBFphIETe0OV3n2Slvd3shHLd3h%2FSfi1tsqJbDDWrY%2F950KYd4e&ua=&miniWua=HHnB_8MNnFhNWIYasyRctWzfUkNiLTVq3xECnCSKrRGagHsU%3D&umidtoken=YDszhoNVHy0DAGaYomGk97h7&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&sign=9ae2f319c2141eedb5a4ee98f20104c9&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26stopPullRefresh%3D1%26from%3DShuqiTab%26upf%3D20665%257CTag%2540Bucket%254028%2540280070236%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let signinactionbodyVal = "";
 
 const readlotterybodyArr = [];
-let readlotterybodyVal = ($.getval("readlotterybodyVal") || "_public=skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26utype%3Dvip%26sdk%3D14.4.2&deliveryId=707&key=sq_app_ad&miniWua=HHnB_E3cfKEn6wnaLjpE7M1a2oHDV%2B/6hkUnIHMeVpSYF1qM%3D&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=3FFC7B605CEBB1A22BDEA118C91B33C1&timestamp=1618071693&userId=2016222669&wua=HIVW_hl8k0SymDG/yDnpfPAZ/1fDa8CvXkfQHXK/Q50HID/G1oKXNxbMiYkmRuKsCa9c4mAcnZOgBttf3qY7Wy%2BtDq2TuCjvbmeJE39QtteWxJo1RMlCTrTfnHm6fxr4ZtFlvPdUbTFxcD%2B7KSlmAxQDJzlQEmwF1Ju1K2bDj76aSqmgmt4zD8qVnjZPaLI5zWN07");
+let readlotterybodyVal = "";
 
 const videolotterybodyArr = [];
-let videolotterybodyVal = ($.getval("videolotterybodyVal") || "_public=skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26utype%3Dvip%26sdk%3D14.4.2&deliveryId=525&key=sq_app_ad&miniWua=HHnB_clb9vAwdjFcZthJt2TPNwj5tr988q9YJ28wThfYHsZI%3D&platform=iOS&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=626&sign=7599D652964431A3A0EA4D379EEF4D9F&timestamp=1618071629&userId=2016222669&user_id=2016222669&wua=HIVW_TRJOW6GUFfZ7lIYxh9heoqgoGafv30GjXRE5f%2BFcIBC8rDG8wmGNx0MiXhTXhFq8/z4aofYJwwMRUQA6Bf35HUjOvB0iFraSO7/hUCO1bk8ThZN7COebGRX4q5OQDwMPBDB1ohuu/l%2B/HUsgP5k1lN3DySF4V0NxEbuR0BZDHj/YGhhPWhFtrS3BA2ps/5t9");
+let videolotterybodyVal = "";
 
 const luckylotterybodyArr = [];
-let luckylotterybodyVal = ($.getval("luckylotterybodyVal") || "_public=skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26utype%3Dvip%26sdk%3D14.4.2&deliveryId=711&key=sq_app_ad&miniWua=HHnB_/CCRHoqMfE79fQI0Y1BoiCjQv0rCI2o0pK8lRH/2eZY%3D&platform=iOS&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=703&sign=A0B916E9A4BA421DE993A74B0066C68C&timestamp=1618053934&userId=2016222669&user_id=2016222669&wua=HIVW_S4lP/mJ%2BjmWJ9FNUIBWFirr9dBQ7Kfl%2BsW5W0gTTjiDMZDuLikmwezNvAPb/SvLbISBrDE4sAekKebUpkjZSMx20T71poENDY1yJzKyC9%2BzJjh8O7Q4BPOhS52YV0sgqL1Sa9CEgEQOCQwSMDlY5Ofbi5pqr0StDGXSG5G5AihPfL0Qqn28w8f0TDC1zUdAQ");
+let luckylotterybodyVal = "";
 
 const luckyredurlArr = [];
-let luckyredurlVal = ($.getval("luckyredurlVal") || "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR");
+let luckyredurlVal = "";
 
 const luckyredbodyArr = [];
-let luckyredbodyVal = ($.getval("luckyredbodyVal") || "wua=HIVW_FnNIzXgkIp%2BewM1zcLJa26gsy8%2FdUdXpQtL%2BPloiKyI%2FNzE6citpLahvldIoOF%2Bf2ft7MqhwHjKJSUH2M3axQQgTLW3tjmYZ3PWc9x7ZAyWELd6hPu2FMuW0Q1N4YVztElIuAYDfXC6bsO08%2FJT77PJEPX2gEWlITZwInXl1ah1QeNTNZnuhyYxYyebXd2xw&ua=&userId=2016222669&umidtoken=YDszhoNVHy0DAGaYomGk97h7&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&asac=2A20C07RJ9F51AOEFSNHDR&timestamp=1618053956&activityId=311&lotteryNum=1&sessionId=1&useGoldcoinType=1&sqSv=1.0&sign=d393907e88352af3e75f86e571d3cff7&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26asac%3D2A20C07RJ9F51AOEFSNHDR%26spm%3Da2oun.page_render_sq_welfare_welfare_page_v2.%25E6%258B%259B%25E8%25B4%25A2%25E7%258C%25AB.turntable_in_0%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let luckyredbodyVal = "";
 
 const sharebodyArr = [];
-let sharebodyVal = ($.getval("sharebodyVal") || "actTaskId=304&wua=HIVW_SzPtaFcV26h1F0SuLY0ql%2FRaipR%2BspmY%2Bn9XoiOC6ZL7KuYTHN9gZ%2BCEk8oCotKfaF8EKSpWKWoj7UCwLcQDmgI96FBX7RCbmHotay8G%2B7hjhbRtRkuSTukm9VOjwqT8IN1pvvr7xsXWBJkLVwszqeJrThLX5CYdmBILvyvs8HMGZ3d01ZyZ3XmiEq%2B4zODP&ua=&miniWua=HHnB_8nX5KF2ExirS9k9f1rB7tb%2Bhrb70K7MTvoyBvDEszBA%3D&userId=2016222669&umidtoken=YDszhoNVHy0DAGaYomGk97h7&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=1&appVer=4.3.4.0&placeId=111111&timestamp=1618071736&sqSv=1.0&sign=729efdd07e067f976c18d336c2e9c584&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let sharebodyVal = "";
 
 const booktaskurlArr = [];
-let booktaskurlVal = ($.getval("booktaskurlVal") || "https://ocean.shuqireader.com/api/activity/v1/task/reward?sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000");
+let booktaskurlVal = "";
 
 const booktaskbodyArr = [];
-let booktaskbodyVal = ($.getval("booktaskbodyVal") || "actTaskId=344&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&userId=2016222669");
+let booktaskbodyVal = "";
 
 const spsigninactionbodyArr = [];
-let spsigninactionbodyVal = ($.getval("spsigninactionbodyVal") || "clientTimestamp=1618053002&position=601&userId=2016222669&signInType=1&wua=ktgi_N2ehfP%2FlnYKhB%2FKvVq6vUuwcmO8QLkdVFPhh3bpjWU%2BYQVLBA2Ytk71LMLHT2LFtwhk98%2Fn1uDXuBVViQK9LdCEM4fMC8Jr3P5plyLlFstr6lur3s6d%2Bgmzrr2TBkFAsgeGHLXl34%2Bbw65yUxQRggf73uwFlexbON1Lqhd6dqa0ANf%2BioR9RK6Sl%2FuKnpslK8Sy86qovNcQUmwM29E6KStfrcRl2xhGQCsFZf1HdS6Umuw76sPGLzFDTgzJoLZ9XEI%2FL4nb8ft%2BijkEumfJQCHng5YXlihGQRy7nnf%2BvwdBNIP9hUZlJr0BPf4RpIbZg&ua=&miniWua=HHnB_i2hcbWj8pQVMf7xqLnFF52gV%2BEhRyzZH8w6wX9hUufEY4Va9T6rpnEJzXtLub%2FeblOAdmCsFrQIIm%2FjqBdWwK3HDvmAht87sNRukSK9FbxZNbNvpmBgN%2F3H5x%2F0Muf6U&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&sign=99a23e5fea0a07da806821c6162abe62&key=sq_h5_gateway&_public=from%3DShuqiTab%26serviceWorkerOn%3D1%26stopPullRefresh%3D1%26sdk%3D14.4.2%26ustatus%3D1%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26idfa%3D00000000-0000-0000-0000-000000000000");
+let spsigninactionbodyVal = "";
 
 const spreadcoinurlArr = [];
-let spreadcoinurlVal = ($.getval("spreadcoinurlVal") || "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.4.2&ustatus=1&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&net_env=wifi&placeid=111111&user_id=2016222669&sn=E1078C273BB54646FD1BF8A4BD941ECD50FF64C0&msv=10.0.0&brand=Apple&imei=FE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YEtuS2Nt1gMDAK6yTjUzfejk&idfa=00000000-0000-0000-0000-000000000000");
+let spreadcoinurlVal = "";
 
 const spreadcoinbodyArr = [];
-let spreadcoinbodyVal = ($.getval("spreadcoinbodyVal") || "actId=355&miniWua=HHnB_QqxUoh%2BZtQjk/LonLp4PTdLn6pzsfQwEdNQu1awL3ak17KVRLg7H2iiUupHBTU7gQ6EPEr0thIZp729wrS2RHAW9pJ8B4ciPhGo9pvEwbDcWOUMWrNZraSCYgGizf/Wf&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1618053057&userId=2016222669&wua=ktgi_2YVIZc04m/q8V2c7Hj5pjTCheeFIaIS87ClyQ%2BGYfeMyBeVBwmvF5gDZseD5L1RDurxR5D9Nvs08N//yT9Wg0OUb8M6AGlfsX1hj4vnp%2BCNc7oxf1y3YyNmFH1tQ7QP8b/PBkGsLJ178FZrasyxKQn/tQhQmGdJkCLqF/FoNvQw4TUQc7zByJ7RHLoki49BJivUNT9ToayGq2Uo%2BhS8eK61S2LPy7ZcMVissinKseMtNKmdf6wxo1D4PaXD0OK4ccY0S%2BPxv%2B4eEaki0c9pcHUXoUHD2QzPTN/%2BZyEPsW8oKQ6J/cY9zWGKG3vr1gjUO");
+let spreadcoinbodyVal = "";
 
 const sp1videocoinbodyArr = [];
-let sp1videocoinbodyVal = ($.getval("sp1videocoinbodyVal") || "_public=idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26net_env%3Dwifi%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26sdk%3D14.4.2&deliveryId=897&key=sq_app_ad&miniWua=HHnB_JpsEkb4QlPzt/8dTKJ7W%2BoIhuLKxghUPdKFc3rfeFCoybu7e3DrSQszT9O3zP9Bh0lfrZM/W%2BSMzQFPRoVtZiOA0zWo4F9dVqtT%2BF26tHvs1/w%2B2wXLFATl%2BOCf8%2BEFT&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=719&sign=32EBAF734E13CA38DDF9B1AC25FA50A2&timestamp=1618053119&userId=2016222669&user_id=2016222669&wua=ktgi_T%2BFDi0Del8tsNwkWsMNX9K88u9VOuYRVBWfNNMJ/1e0bLwmFJr2tYMiBrD4m3sN3kLVi4x28HutElV8e742SBULqnr3WWtY2jdLK0qN9i6God6Sl%2BMXvsMrd1s72fWzxfKTTWD5Wrs6bGIS8%2Bp1jOjuYJOCLhN/e8d2WKdd9iDQyLne00LLpm/fvBFfsYfGtCQpH34wQsWERPLsAybsR0xAsQFZ1TgXUkDuV48vcIohv0fUXfgPR6PC5Hw0GAEFfWfCgvGMt%2B3%2BGMNrpLlz3UEf0S/gni50JHHNzGYyss5q60el7Ijt4A/L6jNWZqQ5S");
+let sp1videocoinbodyVal = "";
 
 const sp2videocoinbodyArr = [];
-let sp2videocoinbodyVal = ($.getval("sp2videocoinbodyVal") || "_public=idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26net_env%3Dwifi%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26sdk%3D14.4.2&deliveryId=980&key=sq_app_ad&miniWua=HHnB_pW3jTDaNPIMxGdqEyb4QxyoFMsNS9lyY5WQf2taYISNnTpVuA%2BWCeD9bzkk9tOoqD5OgFbLiM2%2Bn99OFyKq%2BM9KRbMeqlfYxBXIf0jhqMceXNaXVcaw32hC8ZoR92VWt&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=9095A4B944B4E754014846A3DBCE38AF&timestamp=1618053376&userId=2016222669&user_id=2016222669&wua=ktgi_ZmKGiMGNEkG7lu38dNE93ILt0/8JbFlDWzMemzfvP9oJjMW63FpQf2JkUKccwdDJGJjYpf5BYB7lnxU3cdM7mlzipPbxhGxH1DlMxaAYWFE28SgDeLGJvr2YSi2eaQYxXBrGv%2B7o/43MZi0S5Ab9KsSqbtpMqkCtDGpgACBAwnJB7%2BD52VoE/Y2VwTe03zXqyCEr%2BmOFzMkJJLNRQFBXAZwaTbPZuVBAsvhBq7TrPfNpJ2AF8ao0nxJa11IjQB7PcNeChLlz/K1FvzcpEUk1si4mpe9tjDpIUeXdbT2%2BhqO4RJzpaMjUU9FRH2IHmkD5");
+let sp2videocoinbodyVal = "";
 
 const spsharebodyArr = [];
-let spsharebodyVal = ($.getval("spsharebodyVal") || "actTaskId=327&wua=ktgi_OLiqp2A6mY6jmcgLvhavUympM1Te3PtST4aEMdSW6sLuDulZnDhxsUjU6OGlzMwSD0t69kxYXSKV3GqkChU8SzHZKO%2FVtXnNb0WZNjRB1Zrgv3LC%2B0EYkJizArHoST06RDl%2F0ZQnyGufEUbsI0j8Sj%2Bo%2FVH7pLFobcp7aMRzgdWS9Xr8KUb8%2FHjlun89xvdQ9uQpTE%2FxiHGnTHOYWfutUJVjCol7dUvtY%2BIGYyPHCeScbbp%2BLr59W1oXdx%2FZUpenw8yrkASu7SnimLZlSayT6%2BVdhoUtOHW%2BlIezb17vlobeLV0YyLARBvUpvut2OezcP6QuQXzQ2nVWVee3fN6oVw%3D%3D&ua=&miniWua=HHnB_ky055dQnoCsWs2CaNrqK2KDJdZfTM1Jmo21LTL52B6KEOf2yVEU8quzeucMflAvYjxQyVd4Nrncb%2BkI6d1AZjG1Ev%2FasgKy4PfF069sxPffDQ1eN5aTYuDsfE5Fg3gHH&userId=2016222669&umidtoken=YAJLUBZLOugeCTV4u9tKHbdddvwFZcwM&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=116&appVer=1.0.5.0&placeId=111111&timestamp=1618053165&sqSv=1.0&sign=552aba6870d301c02636edb4187bc13b&key=sq_h5_gateway&_public=from%3DShuqiTab%26serviceWorkerOn%3D1%26stopPullRefresh%3D1%26sdk%3D14.4.2%26ustatus%3D1%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26idfa%3D00000000-0000-0000-0000-000000000000");
+let spsharebodyVal = "";
 
 const lotteryinfourlArr = [];
-let lotteryinfourlVal = ($.getval("lotteryinfourlVal") || "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/info?timestamp=1618053963&userId=2016222669&activityId=311&sqSv=1.0&sign=39f1a242df4294f88c55774f77b9b40f&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26asac%3D2A20C07RJ9F51AOEFSNHDR%26spm%3Da2oun.page_render_sq_welfare_welfare_page_v2.%25E6%258B%259B%25E8%25B4%25A2%25E7%258C%25AB.turntable_in_0%26sdk%3D14.4.2%26utdid%3DYDszhoNVHy0DAGaYomGk97h7%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3D7F3932D0E91D15C1CDFD2E9B517D5CD4F74A487C%26umidtoken%3DYDszhoNVHy0DAGaYomGk97h7%26msv%3D8.0.0%26brand%3DApple%26imei%3D030C74C7908663ADD9F06354ECC1B703FC0C2FD6%26skinVersionPrefix%3D1%26appVer%3D4.3.4.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiMDMwQzc0Qzc5MDg2NjNBREQ5RjA2MzU0RUNDMUI3MDNGQzBDMkZENiIsInNuIjoiN0YzOTMyRDBFOTFEMTVDMUNERkQyRTlCNTE3RDVDRDRGNzRBNDg3QyIsImV4cCI6MTYxODU3MTI2MSwidXNlcklkIjoiMjAxNjIyMjY2OSIsImlhdCI6MTYxODA1Mjg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.nFGXG1amUOhMBjN8GWhI32H2I3AsI9ymNKGw1SzaB7vtM6W6LBdt7TXjJguMUX7fs7A5NKtkybUf-QhiIw1hSQ%26skinColor%3D23B383%26platform%3D1%26ver%3D210207%26mod%3DiPhone12%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000");
+let lotteryinfourlVal = "";
 
 const videoinfourlArr = [];
-let videoinfourlVal = ($.getval("videoinfourlVal") || "https://ocean.shuqireader.com/api/ad/adserver/v1/api/getAdInfo?appVer=1.0.5.0&placeId=111111&platform=116&requestSrc=h5&resourceId=720&timestamp=1618072863&user_id=2016222669&sqSv=1.0&sign=c5fba0cee9858d6a185a5ac1f8302d88&key=sq_h5_gateway&_public=from%3DShuqiTab%26serviceWorkerOn%3D1%26stopPullRefresh%3D1%26sdk%3D14.4.2%26ustatus%3D1%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26idfa%3D00000000-0000-0000-0000-000000000000");
+let videoinfourlVal = "";
 
 const spvideoinfourlArr = [];
-let spvideoinfourlVal = ($.getval("spvideoinfourlVal") || "https://ocean.shuqireader.com/api/ad/adserver/v1/api/getAdInfo?appVer=1.0.5.0&placeId=111111&platform=116&requestSrc=h5&resourceId=720&timestamp=1618072936&user_id=2016222669&sqSv=1.0&sign=ddbd1647056b42c408e6c65ec5e5e9cf&key=sq_h5_gateway&_public=from%3DShuqiTab%26serviceWorkerOn%3D1%26stopPullRefresh%3D1%26sdk%3D14.4.2%26ustatus%3D1%26umidtoken%3DYAJLUBZLOugeCTV4u9tKHbdddvwFZcwM%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2016222669%26sn%3DE1078C273BB54646FD1BF8A4BD941ECD50FF64C0%26msv%3D10.0.0%26brand%3DApple%26imei%3DFE9AFB5E7E6E382314DCCF5B7C03DD3E2ED7B7D9%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDE2MjIyNjY5IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GRTlBRkI1RTdFNkUzODIzMTREQ0NGNUI3QzAzREQzRTJFRDdCN0Q5Iiwic24iOiJmYXN0X0UxMDc4QzI3M0JCNTQ2NDZGRDFCRjhBNEJEOTQxRUNENTBGRjY0QzAiLCJleHAiOjE2MTg1NzEyODMsInVzZXJJZCI6IjIwMTYyMjI2NjkiLCJpYXQiOjE2MTgwNTI4ODMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.rs8FrM1dNmJN74Cr2_U0OQ9GojJQG2NEuxFscUHTMpSTP6i4q2mTzKMWuQWDqI8M9fQ7CpN4PzwjMQQCxfS9yA%26statusBarHeight%3D44.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone12%26wh%3D1125x2436%26utype%3Dvip%26utdid%3DYEtuS2Nt1gMDAK6yTjUzfejk%26idfa%3D00000000-0000-0000-0000-000000000000");
+let spvideoinfourlVal = "";
 
 
 if ($.isNode()) {
   
   
-  
+  if (process.env.lrb && process.env.lrb.indexOf('#') > -1) {
+   loadresourcebodyVal = process.env.lrb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.lrb && process.env.lrb.indexOf('\n') > -1) {
+   loadresourcebodyVal = process.env.lrb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   loadresourcebodyVal = process.env.lrb.split()
+  };
   Object.keys(loadresourcebodyVal).forEach((item) => {
     if (loadresourcebodyVal[item]) {
       loadresourcebodyArr.push(loadresourcebodyVal[item])
     }
   });
-
+  
+  
+    if (process.env.lrk && process.env.lrk.indexOf('#') > -1) {
+   loadresourcekeyVal = process.env.lrk.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.lrk && process.env.lrk.indexOf('\n') > -1) {
+   loadresourcekeyVal = process.env.lrk.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   loadresourcekeyVal = process.env.lrk.split()
+  };
   Object.keys(loadresourcekeyVal).forEach((item) => {
     if (loadresourcekeyVal[item]) {
       loadresourcekeyArr.push(loadresourcekeyVal[item])
     }
   });
-
+  
+  
+if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
+   sploadresourcebodyVal = process.env.splrb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.splrb && process.env.splrb.indexOf('\n') > -1) {
+   sploadresourcebodyVal = process.env.splrb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   sploadresourcebodyVal = process.env.splrb.split()
+  };
   Object.keys(sploadresourcebodyVal).forEach((item) => {
     if (sploadresourcebodyVal[item]) {
       sploadresourcebodyArr.push(sploadresourcebodyVal[item])
     }
   });
 
+  
+  if (process.env.splrk && process.env.splrk.indexOf('#') > -1) {
+   sploadresourcekeyVal = process.env.splrk.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.splrk && process.env.splrk.indexOf('\n') > -1) {
+   sploadresourcekeyVal = process.env.splrk.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   sploadresourcekeyVal = process.env.splrk.split()
+  };
   Object.keys(sploadresourcekeyVal).forEach((item) => {
     if (sploadresourcekeyVal[item]) {
       sploadresourcekeyArr.push(sploadresourcekeyVal[item])
@@ -145,127 +187,361 @@ if ($.isNode()) {
   });
 
 
+  
+    if (process.env.wb && process.env.wb.indexOf('#') > -1) {
+   withdrawbodyVal = process.env.wb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.wb && process.env.wb.indexOf('\n') > -1) {
+   withdrawbodyVal = process.env.wb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   withdrawbodyVal = process.env.wb.split()
+  };
   Object.keys(withdrawbodyVal).forEach((item) => {
     if (withdrawbodyVal[item]) {
       withdrawbodyArr.push(withdrawbodyVal[item])
     }
   });
 
+  
+      if (process.env.bb && process.env.bb.indexOf('#') > -1) {
+   bubblebodyVal = process.env.bb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.bb && process.env.bb.indexOf('\n') > -1) {
+   bubblebodyVal = process.env.bb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   bubblebodyVal = process.env.bb.split()
+  };
   Object.keys(bubblebodyVal).forEach((item) => {
     if (bubblebodyVal[item]) {
       bubblebodyArr.push(bubblebodyVal[item])
     }
   });
 
+  
+   if (process.env.rb && process.env.rb.indexOf('#') > -1) {
+   receivebodyVal = process.env.rb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.rb && process.env.rb.indexOf('\n') > -1) {
+   receivebodyVal = process.env.rb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   receivebodyVal = process.env.rb.split()
+  };
   Object.keys(receivebodyVal).forEach((item) => {
     if (receivebodyVal[item]) {
       receivebodyArr.push(receivebodyVal[item])
     }
   });
 
+  
+     if (process.env.snb && process.env.snb.indexOf('#') > -1) {
+   signinactionbodyVal = process.env.snb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.snb && process.env.snb.indexOf('\n') > -1) {
+   signinactionbodyVal = process.env.snb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   signinactionbodyVal = process.env.snb.split()
+  };
   Object.keys(signinactionbodyVal).forEach((item) => {
     if (signinactionbodyVal[item]) {
       signinactionbodyArr.push(signinactionbodyVal[item])
     }
   });
 
+  
+  
+       if (process.env.rlb && process.env.rlb.indexOf('#') > -1) {
+  readlotterybodyVal = process.env.rlb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.rlb && process.env.rlb.indexOf('\n') > -1) {
+   readlotterybodyVal = process.env.rlb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   readlotterybodyVal = process.env.rlb.split()
+  };
   Object.keys(readlotterybodyVal).forEach((item) => {
     if (readlotterybodyVal[item]) {
       readlotterybodyArr.push(readlotterybodyVal[item])
     }
   });
-
+  
+  
+       if (process.env.vlb && process.env.vlb.indexOf('#') > -1) {
+   videolotterybodyVal = process.env.vlb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.vlb && process.env.vlb.indexOf('\n') > -1) {
+   videolotterybodyVal = process.env.vlb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   videolotterybodyVal = process.env.vlb.split()
+  };
   Object.keys(videolotterybodyVal).forEach((item) => {
     if (videolotterybodyVal[item]) {
       videolotterybodyArr.push(videolotterybodyVal[item])
     }
   });
 
+  
+  
+         if (process.env.llb && process.env.llb.indexOf('#') > -1) {
+  luckylotterybodyVal = process.env.llb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.llb && process.env.llb.indexOf('\n') > -1) {
+   luckylotterybodyVal = process.env.llb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   luckylotterybodyVal = process.env.llb.split()
+  };
   Object.keys(luckylotterybodyVal).forEach((item) => {
     if (luckylotterybodyVal[item]) {
       luckylotterybodyArr.push(luckylotterybodyVal[item])
     }
   });
 
+  
+         if (process.env.lru && process.env.lru.indexOf('#') > -1) {
+   luckyredurlVal = process.env.lru.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.lru && process.env.lru.indexOf('\n') > -1) {
+   luckyredurlVal = process.env.lru.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   luckyredurlVal = process.env.lru.split()
+  };
   Object.keys(luckyredurlVal).forEach((item) => {
     if (luckyredurlVal[item]) {
       luckyredurlArr.push(luckyredurlVal[item])
     }
   });
 
+  
+         if (process.env.lrb && process.env.lrb.indexOf('#') > -1) {
+   luckyredbodyVal = process.env.lrb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.lrb && process.env.lrb.indexOf('\n') > -1) {
+   luckyredbodyVal = process.env.lrb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   luckyredbodyVal = process.env.lrb.split()
+  };
   Object.keys(luckyredbodyVal).forEach((item) => {
     if (luckyredbodyVal[item]) {
       luckyredbodyArr.push(luckyredbodyVal[item])
     }
   });
 
+  
+         if (process.env.sb && process.env.sb.indexOf('#') > -1) {
+   sharebodyVal = process.env.sb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.sb && process.env.sb.indexOf('\n') > -1) {
+   sharebodyVal = process.env.sb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   sharebodyVal = process.env.sb.split()
+  };
   Object.keys(sharebodyVal).forEach((item) => {
     if (sharebodyVal[item]) {
       sharebodyArr.push(sharebodyVal[item])
     }
   });
 
-
+       if (process.env.btu && process.env.btu.indexOf('#') > -1) {
+   booktaskurlVal = process.env.btu.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.btu && process.env.btu.indexOf('\n') > -1) {
+   booktaskurlVal = process.env.btu.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   booktaskurlVal = process.env.btu.split()
+  };
   Object.keys(booktaskurlVal).forEach((item) => {
     if (booktaskurlVal[item]) {
       booktaskurlArr.push(booktaskurlVal[item])
     }
   });
 
+  
+         if (process.env.btb && process.env.btb.indexOf('#') > -1) {
+   booktaskbodyVal = process.env.btb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.btb && process.env.btb.indexOf('\n') > -1) {
+   booktaskbodyVal = process.env.btb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   booktaskbodyVal = process.env.btb.split()
+  };
   Object.keys(booktaskbodyVal).forEach((item) => {
     if (booktaskbodyVal[item]) {
       booktaskbodyArr.push(booktaskbodyVal[item])
     }
   });
 
+  
+  
+         if (process.env.spsnb && process.env.spsnb.indexOf('#') > -1) {
+   spsigninactionbodyVal = process.env.spsnb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.spsnb && process.env.spsnb.indexOf('\n') > -1) {
+   spsigninactionbodyVal = process.env.spsnb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   spsigninactionbodyVal = process.env.spsnb.split()
+  };
   Object.keys(spsigninactionbodyVal).forEach((item) => {
     if (spsigninactionbodyVal[item]) {
       spsigninactionbodyArr.push(spsigninactionbodyVal[item])
     }
   });
 
+  
+  
+         if (process.env.sprcu && process.env.sprcu.indexOf('#') > -1) {
+   spreadcoinurlVal = process.env.sprcu.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.sprcu && process.env.sprcu.indexOf('\n') > -1) {
+   spreadcoinurlVal = process.env.sprcu.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   spreadcoinurlVal = process.env.sprcu.split()
+  };
   Object.keys(spreadcoinurlVal).forEach((item) => {
     if (spreadcoinurlVal[item]) {
       spreadcoinurlArr.push(spreadcoinurlVal[item])
     }
   });
 
+  
+  
+         if (process.env.sprcb && process.env.sprcb.indexOf('#') > -1) {
+   spreadcoinbodyVal = process.env.sprcb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.sprcb && process.env.sprcb.indexOf('\n') > -1) {
+   spreadcoinbodyVal = process.env.sprcb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   spreadcoinbodyVal = process.env.sprcb.split()
+  };
   Object.keys(spreadcoinbodyVal).forEach((item) => {
     if (spreadcoinbodyVal[item]) {
       spreadcoinbodyArr.push(spreadcoinbodyVal[item])
     }
   });
 
+  
+         if (process.env.sp1v && process.env.sp1v.indexOf('#') > -1) {
+   sp1videocoinbodyVal = process.env.sp1v.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.sp1v && process.env.sp1v.indexOf('\n') > -1) {
+   sp1videocoinbodyVal = process.env.sp1v.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   sp1videocoinbodyVal = process.env.sp1v.split()
+  };
   Object.keys(sp1videocoinbodyVal).forEach((item) => {
     if (sp1videocoinbodyVal[item]) {
       sp1videocoinbodyArr.push(sp1videocoinbodyVal[item])
     }
   });
 
+  
+         if (process.env.sp2v && process.env.sp2v.indexOf('#') > -1) {
+   sp2videocoinbodyVal = process.env.sp2v.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.sp2v && process.env.sp2v.indexOf('\n') > -1) {
+   sp2videocoinbodyVal = process.env.sp2v.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   sp2videocoinbodyVal = process.env.sp2v.split()
+  };
   Object.keys(sp2videocoinbodyVal).forEach((item) => {
     if (sp2videocoinbodyVal[item]) {
       sp2videocoinbodyArr.push(sp2videocoinbodyVal[item])
     }
   });
 
+  
+         if (process.env.spsb && process.env.spsb.indexOf('#') > -1) {
+   spsharebodyVal = process.env.spsb.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.spsb && process.env.spsb.indexOf('\n') > -1) {
+   spsharebodyVal = process.env.spsb.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   spsharebodyVal = process.env.spsb.split()
+  };
   Object.keys(spsharebodyVal).forEach((item) => {
     if (spsharebodyVal[item]) {
       spsharebodyArr.push(spsharebodyVal[item])
     }
   });
 
+  
+         if (process.env.liu && process.env.liu.indexOf('#') > -1) {
+   lotteryinfourlVal = process.env.liu.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.liu && process.env.liu.indexOf('\n') > -1) {
+   lotteryinfourlVal = process.env.liu.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   lotteryinfourlVal = process.env.liu.split()
+  };
   Object.keys(lotteryinfourlVal).forEach((item) => {
     if (lotteryinfourlVal[item]) {
       lotteryinfourlArr.push(lotteryinfourlVal[item])
     }
   });
 
+  
+         if (process.env.viu && process.env.viu.indexOf('#') > -1) {
+   videoinfourlVal = process.env.viu.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.viu && process.env.viu.indexOf('\n') > -1) {
+   videoinfourlVal = process.env.viu.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   videoinfourlVal = process.env.viu.split()
+  };
   Object.keys(videoinfourlVal).forEach((item) => {
     if (videoinfourlVal[item]) {
       videoinfourlArr.push(videoinfourlVal[item])
     }
   });
 
+  
+         if (process.env.spviu && process.env.spviu.indexOf('#') > -1) {
+   spvideoinfourlVal = process.env.spviu.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.spviu && process.env.spviu.indexOf('\n') > -1) {
+   spvideoinfourlVal = process.env.spviu.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   spvideoinfourlVal = process.env.spviu.split()
+  };
   Object.keys(spvideoinfourlVal).forEach((item) => {
     if (spvideoinfourlVal[item]) {
       spvideoinfourlArr.push(spvideoinfourlVal[item])
