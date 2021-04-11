@@ -326,15 +326,15 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   });
 
   
-         if (process.env.lrb && process.env.lrb.indexOf('#') > -1) {
-   luckyredbodyVal = process.env.lrb.split('#');
+         if (process.env.lrbv && process.env.lrbv.indexOf('#') > -1) {
+   luckyredbodyVal = process.env.lrbv.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
-  else if (process.env.lrb && process.env.lrb.indexOf('\n') > -1) {
-   luckyredbodyVal = process.env.lrb.split('\n');
+  else if (process.env.lrbv && process.env.lrbv.indexOf('\n') > -1) {
+   luckyredbodyVal = process.env.lrbv.split('\n');
    console.log(`您选择的是用换行隔开\n`)
   } else {
-   luckyredbodyVal = process.env.lrb.split()
+   luckyredbodyVal = process.env.lrbv.split()
   };
   Object.keys(luckyredbodyVal).forEach((item) => {
     if (luckyredbodyVal[item]) {
