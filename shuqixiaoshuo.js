@@ -619,6 +619,7 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   await $.wait(1000)
   console.log(`👥 本次执行共${loadresourcebodyArr.length}个账号`)
   for (var i = 0; i < loadresourcebodyArr.length; i++) {
+    if (loadresourcebodyArr[i]){
     loadresourcebodyVal = loadresourcebodyArr[i];
     loadresourcekeyVal = loadresourcekeyArr[i];
     sploadresourcebodyVal = sploadresourcebodyArr[i];
@@ -648,6 +649,7 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
     await shuqiapp();
     //await showmsg1();
     await showmsg2();
+  }
   }
 })()
 .catch((e) => $.logErr(e))
