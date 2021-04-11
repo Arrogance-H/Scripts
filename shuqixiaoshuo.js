@@ -129,14 +129,8 @@ if ($.isNode()) {
   } else {
    loadresourcebodyVal = process.env.lrb.split()
   };
-  Object.keys(loadresourcebodyVal).forEach((item) => {
-    if (loadresourcebodyVal[item]) {
-      loadresourcebodyArr.push(loadresourcebodyVal[item])
-    }
-  });
   
-  
-    if (process.env.lrk && process.env.lrk.indexOf('#') > -1) {
+  if (process.env.lrk && process.env.lrk.indexOf('#') > -1) {
    loadresourcekeyVal = process.env.lrk.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -146,14 +140,8 @@ if ($.isNode()) {
   } else {
    loadresourcekeyVal = process.env.lrk.split()
   };
-  Object.keys(loadresourcekeyVal).forEach((item) => {
-    if (loadresourcekeyVal[item]) {
-      loadresourcekeyArr.push(loadresourcekeyVal[item])
-    }
-  });
   
-  
-if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
+  if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
    sploadresourcebodyVal = process.env.splrb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -163,13 +151,7 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    sploadresourcebodyVal = process.env.splrb.split()
   };
-  Object.keys(sploadresourcebodyVal).forEach((item) => {
-    if (sploadresourcebodyVal[item]) {
-      sploadresourcebodyArr.push(sploadresourcebodyVal[item])
-    }
-  });
 
-  
   if (process.env.splrk && process.env.splrk.indexOf('#') > -1) {
    sploadresourcekeyVal = process.env.splrk.split('#');
    console.log(`您选择的是用"#"隔开\n`)
@@ -180,15 +162,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    sploadresourcekeyVal = process.env.splrk.split()
   };
-  Object.keys(sploadresourcekeyVal).forEach((item) => {
-    if (sploadresourcekeyVal[item]) {
-      sploadresourcekeyArr.push(sploadresourcekeyVal[item])
-    }
-  });
 
-
-  
-    if (process.env.wb && process.env.wb.indexOf('#') > -1) {
+  if (process.env.wb && process.env.wb.indexOf('#') > -1) {
    withdrawbodyVal = process.env.wb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -198,14 +173,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    withdrawbodyVal = process.env.wb.split()
   };
-  Object.keys(withdrawbodyVal).forEach((item) => {
-    if (withdrawbodyVal[item]) {
-      withdrawbodyArr.push(withdrawbodyVal[item])
-    }
-  });
-
   
-      if (process.env.bb && process.env.bb.indexOf('#') > -1) {
+  if (process.env.bb && process.env.bb.indexOf('#') > -1) {
    bubblebodyVal = process.env.bb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -215,14 +184,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    bubblebodyVal = process.env.bb.split()
   };
-  Object.keys(bubblebodyVal).forEach((item) => {
-    if (bubblebodyVal[item]) {
-      bubblebodyArr.push(bubblebodyVal[item])
-    }
-  });
 
-  
-   if (process.env.rb && process.env.rb.indexOf('#') > -1) {
+  if (process.env.rb && process.env.rb.indexOf('#') > -1) {
    receivebodyVal = process.env.rb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -232,14 +195,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    receivebodyVal = process.env.rb.split()
   };
-  Object.keys(receivebodyVal).forEach((item) => {
-    if (receivebodyVal[item]) {
-      receivebodyArr.push(receivebodyVal[item])
-    }
-  });
 
-  
-     if (process.env.snb && process.env.snb.indexOf('#') > -1) {
+  if (process.env.snb && process.env.snb.indexOf('#') > -1) {
    signinactionbodyVal = process.env.snb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -249,15 +206,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    signinactionbodyVal = process.env.snb.split()
   };
-  Object.keys(signinactionbodyVal).forEach((item) => {
-    if (signinactionbodyVal[item]) {
-      signinactionbodyArr.push(signinactionbodyVal[item])
-    }
-  });
 
-  
-  
-       if (process.env.rlb && process.env.rlb.indexOf('#') > -1) {
+ if (process.env.rlb && process.env.rlb.indexOf('#') > -1) {
   readlotterybodyVal = process.env.rlb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -267,14 +217,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    readlotterybodyVal = process.env.rlb.split()
   };
-  Object.keys(readlotterybodyVal).forEach((item) => {
-    if (readlotterybodyVal[item]) {
-      readlotterybodyArr.push(readlotterybodyVal[item])
-    }
-  });
-  
-  
-       if (process.env.vlb && process.env.vlb.indexOf('#') > -1) {
+
+  if (process.env.vlb && process.env.vlb.indexOf('#') > -1) {
    videolotterybodyVal = process.env.vlb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -284,15 +228,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    videolotterybodyVal = process.env.vlb.split()
   };
-  Object.keys(videolotterybodyVal).forEach((item) => {
-    if (videolotterybodyVal[item]) {
-      videolotterybodyArr.push(videolotterybodyVal[item])
-    }
-  });
 
-  
-  
-         if (process.env.llb && process.env.llb.indexOf('#') > -1) {
+ if (process.env.llb && process.env.llb.indexOf('#') > -1) {
   luckylotterybodyVal = process.env.llb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -302,14 +239,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    luckylotterybodyVal = process.env.llb.split()
   };
-  Object.keys(luckylotterybodyVal).forEach((item) => {
-    if (luckylotterybodyVal[item]) {
-      luckylotterybodyArr.push(luckylotterybodyVal[item])
-    }
-  });
 
-  
-         if (process.env.lru && process.env.lru.indexOf('#') > -1) {
+  if (process.env.lru && process.env.lru.indexOf('#') > -1) {
    luckyredurlVal = process.env.lru.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -319,14 +250,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    luckyredurlVal = process.env.lru.split()
   };
-  Object.keys(luckyredurlVal).forEach((item) => {
-    if (luckyredurlVal[item]) {
-      luckyredurlArr.push(luckyredurlVal[item])
-    }
-  });
 
-  
-         if (process.env.lrbv && process.env.lrbv.indexOf('#') > -1) {
+  if (process.env.lrbv && process.env.lrbv.indexOf('#') > -1) {
    luckyredbodyVal = process.env.lrbv.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -336,14 +261,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    luckyredbodyVal = process.env.lrbv.split()
   };
-  Object.keys(luckyredbodyVal).forEach((item) => {
-    if (luckyredbodyVal[item]) {
-      luckyredbodyArr.push(luckyredbodyVal[item])
-    }
-  });
-
-  
-         if (process.env.sb && process.env.sb.indexOf('#') > -1) {
+ 
+  if (process.env.sb && process.env.sb.indexOf('#') > -1) {
    sharebodyVal = process.env.sb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -353,13 +272,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    sharebodyVal = process.env.sb.split()
   };
-  Object.keys(sharebodyVal).forEach((item) => {
-    if (sharebodyVal[item]) {
-      sharebodyArr.push(sharebodyVal[item])
-    }
-  });
 
-       if (process.env.btu && process.env.btu.indexOf('#') > -1) {
+  if (process.env.btu && process.env.btu.indexOf('#') > -1) {
    booktaskurlVal = process.env.btu.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -369,14 +283,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    booktaskurlVal = process.env.btu.split()
   };
-  Object.keys(booktaskurlVal).forEach((item) => {
-    if (booktaskurlVal[item]) {
-      booktaskurlArr.push(booktaskurlVal[item])
-    }
-  });
 
-  
-         if (process.env.btb && process.env.btb.indexOf('#') > -1) {
+  if (process.env.btb && process.env.btb.indexOf('#') > -1) {
    booktaskbodyVal = process.env.btb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -386,15 +294,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    booktaskbodyVal = process.env.btb.split()
   };
-  Object.keys(booktaskbodyVal).forEach((item) => {
-    if (booktaskbodyVal[item]) {
-      booktaskbodyArr.push(booktaskbodyVal[item])
-    }
-  });
 
-  
-  
-         if (process.env.spsnb && process.env.spsnb.indexOf('#') > -1) {
+  if (process.env.spsnb && process.env.spsnb.indexOf('#') > -1) {
    spsigninactionbodyVal = process.env.spsnb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -404,15 +305,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    spsigninactionbodyVal = process.env.spsnb.split()
   };
-  Object.keys(spsigninactionbodyVal).forEach((item) => {
-    if (spsigninactionbodyVal[item]) {
-      spsigninactionbodyArr.push(spsigninactionbodyVal[item])
-    }
-  });
 
-  
-  
-         if (process.env.sprcu && process.env.sprcu.indexOf('#') > -1) {
+  if (process.env.sprcu && process.env.sprcu.indexOf('#') > -1) {
    spreadcoinurlVal = process.env.sprcu.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -422,15 +316,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    spreadcoinurlVal = process.env.sprcu.split()
   };
-  Object.keys(spreadcoinurlVal).forEach((item) => {
-    if (spreadcoinurlVal[item]) {
-      spreadcoinurlArr.push(spreadcoinurlVal[item])
-    }
-  });
 
-  
-  
-         if (process.env.sprcb && process.env.sprcb.indexOf('#') > -1) {
+  if (process.env.sprcb && process.env.sprcb.indexOf('#') > -1) {
    spreadcoinbodyVal = process.env.sprcb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -440,14 +327,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    spreadcoinbodyVal = process.env.sprcb.split()
   };
-  Object.keys(spreadcoinbodyVal).forEach((item) => {
-    if (spreadcoinbodyVal[item]) {
-      spreadcoinbodyArr.push(spreadcoinbodyVal[item])
-    }
-  });
 
-  
-         if (process.env.sp1v && process.env.sp1v.indexOf('#') > -1) {
+  if (process.env.sp1v && process.env.sp1v.indexOf('#') > -1) {
    sp1videocoinbodyVal = process.env.sp1v.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -457,14 +338,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    sp1videocoinbodyVal = process.env.sp1v.split()
   };
-  Object.keys(sp1videocoinbodyVal).forEach((item) => {
-    if (sp1videocoinbodyVal[item]) {
-      sp1videocoinbodyArr.push(sp1videocoinbodyVal[item])
-    }
-  });
 
-  
-         if (process.env.sp2v && process.env.sp2v.indexOf('#') > -1) {
+  if (process.env.sp2v && process.env.sp2v.indexOf('#') > -1) {
    sp2videocoinbodyVal = process.env.sp2v.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -474,14 +349,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    sp2videocoinbodyVal = process.env.sp2v.split()
   };
-  Object.keys(sp2videocoinbodyVal).forEach((item) => {
-    if (sp2videocoinbodyVal[item]) {
-      sp2videocoinbodyArr.push(sp2videocoinbodyVal[item])
-    }
-  });
-
   
-         if (process.env.spsb && process.env.spsb.indexOf('#') > -1) {
+  if (process.env.spsb && process.env.spsb.indexOf('#') > -1) {
    spsharebodyVal = process.env.spsb.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -491,14 +360,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    spsharebodyVal = process.env.spsb.split()
   };
-  Object.keys(spsharebodyVal).forEach((item) => {
-    if (spsharebodyVal[item]) {
-      spsharebodyArr.push(spsharebodyVal[item])
-    }
-  });
-
   
-         if (process.env.liu && process.env.liu.indexOf('#') > -1) {
+  if (process.env.liu && process.env.liu.indexOf('#') > -1) {
    lotteryinfourlVal = process.env.liu.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -508,14 +371,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    lotteryinfourlVal = process.env.liu.split()
   };
-  Object.keys(lotteryinfourlVal).forEach((item) => {
-    if (lotteryinfourlVal[item]) {
-      lotteryinfourlArr.push(lotteryinfourlVal[item])
-    }
-  });
-
   
-         if (process.env.viu && process.env.viu.indexOf('#') > -1) {
+  if (process.env.viu && process.env.viu.indexOf('#') > -1) {
    videoinfourlVal = process.env.viu.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -525,14 +382,8 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    videoinfourlVal = process.env.viu.split()
   };
-  Object.keys(videoinfourlVal).forEach((item) => {
-    if (videoinfourlVal[item]) {
-      videoinfourlArr.push(videoinfourlVal[item])
-    }
-  });
 
-  
-         if (process.env.spviu && process.env.spviu.indexOf('#') > -1) {
+  if (process.env.spviu && process.env.spviu.indexOf('#') > -1) {
    spvideoinfourlVal = process.env.spviu.split('#');
    console.log(`您选择的是用"#"隔开\n`)
   }
@@ -542,12 +393,159 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   } else {
    spvideoinfourlVal = process.env.spviu.split()
   };
+
+  Object.keys(loadresourcebodyVal).forEach((item) => {
+    if (loadresourcebodyVal[item]) {
+      loadresourcebodyArr.push(loadresourcebodyVal[item])
+    }
+  });
+
+  Object.keys(loadresourcekeyVal).forEach((item) => {
+    if (loadresourcekeyVal[item]) {
+      loadresourcekeyArr.push(loadresourcekeyVal[item])
+    }
+  });
+
+  Object.keys(sploadresourcebodyVal).forEach((item) => {
+    if (sploadresourcebodyVal[item]) {
+      sploadresourcebodyArr.push(sploadresourcebodyVal[item])
+    }
+  });
+
+  Object.keys(sploadresourcekeyVal).forEach((item) => {
+    if (sploadresourcekeyVal[item]) {
+      sploadresourcekeyArr.push(sploadresourcekeyVal[item])
+    }
+  });
+
+
+  Object.keys(withdrawbodyVal).forEach((item) => {
+    if (withdrawbodyVal[item]) {
+      withdrawbodyArr.push(withdrawbodyVal[item])
+    }
+  });
+
+  Object.keys(bubblebodyVal).forEach((item) => {
+    if (bubblebodyVal[item]) {
+      bubblebodyArr.push(bubblebodyVal[item])
+    }
+  });
+
+  Object.keys(receivebodyVal).forEach((item) => {
+    if (receivebodyVal[item]) {
+      receivebodyArr.push(receivebodyVal[item])
+    }
+  });
+
+  Object.keys(signinactionbodyVal).forEach((item) => {
+    if (signinactionbodyVal[item]) {
+      signinactionbodyArr.push(signinactionbodyVal[item])
+    }
+  });
+
+  Object.keys(readlotterybodyVal).forEach((item) => {
+    if (readlotterybodyVal[item]) {
+      readlotterybodyArr.push(readlotterybodyVal[item])
+    }
+  });
+
+  Object.keys(videolotterybodyVal).forEach((item) => {
+    if (videolotterybodyVal[item]) {
+      videolotterybodyArr.push(videolotterybodyVal[item])
+    }
+  });
+
+  Object.keys(luckylotterybodyVal).forEach((item) => {
+    if (luckylotterybodyVal[item]) {
+      luckylotterybodyArr.push(luckylotterybodyVal[item])
+    }
+  });
+
+  Object.keys(luckyredurlVal).forEach((item) => {
+    if (luckyredurlVal[item]) {
+      luckyredurlArr.push(luckyredurlVal[item])
+    }
+  });
+
+  Object.keys(luckyredbodyVal).forEach((item) => {
+    if (luckyredbodyVal[item]) {
+      luckyredbodyArr.push(luckyredbodyVal[item])
+    }
+  });
+
+  Object.keys(sharebodyVal).forEach((item) => {
+    if (sharebodyVal[item]) {
+      sharebodyArr.push(sharebodyVal[item])
+    }
+  });
+
+
+  Object.keys(booktaskurlVal).forEach((item) => {
+    if (booktaskurlVal[item]) {
+      booktaskurlArr.push(booktaskurlVal[item])
+    }
+  });
+
+  Object.keys(booktaskbodyVal).forEach((item) => {
+    if (booktaskbodyVal[item]) {
+      booktaskbodyArr.push(booktaskbodyVal[item])
+    }
+  });
+
+  Object.keys(spsigninactionbodyVal).forEach((item) => {
+    if (spsigninactionbodyVal[item]) {
+      spsigninactionbodyArr.push(spsigninactionbodyVal[item])
+    }
+  });
+
+  Object.keys(spreadcoinurlVal).forEach((item) => {
+    if (spreadcoinurlVal[item]) {
+      spreadcoinurlArr.push(spreadcoinurlVal[item])
+    }
+  });
+
+  Object.keys(spreadcoinbodyVal).forEach((item) => {
+    if (spreadcoinbodyVal[item]) {
+      spreadcoinbodyArr.push(spreadcoinbodyVal[item])
+    }
+  });
+
+  Object.keys(sp1videocoinbodyVal).forEach((item) => {
+    if (sp1videocoinbodyVal[item]) {
+      sp1videocoinbodyArr.push(sp1videocoinbodyVal[item])
+    }
+  });
+
+  Object.keys(sp2videocoinbodyVal).forEach((item) => {
+    if (sp2videocoinbodyVal[item]) {
+      sp2videocoinbodyArr.push(sp2videocoinbodyVal[item])
+    }
+  });
+
+  Object.keys(spsharebodyVal).forEach((item) => {
+    if (spsharebodyVal[item]) {
+      spsharebodyArr.push(spsharebodyVal[item])
+    }
+  });
+
+  Object.keys(lotteryinfourlVal).forEach((item) => {
+    if (lotteryinfourlVal[item]) {
+      lotteryinfourlArr.push(lotteryinfourlVal[item])
+    }
+  });
+
+  Object.keys(videoinfourlVal).forEach((item) => {
+    if (videoinfourlVal[item]) {
+      videoinfourlArr.push(videoinfourlVal[item])
+    }
+  });
+
   Object.keys(spvideoinfourlVal).forEach((item) => {
     if (spvideoinfourlVal[item]) {
       spvideoinfourlArr.push(spvideoinfourlVal[item])
     }
   });
-
+  
 } else {
   loadresourcebodyArr.push($.getdata('loadresourcebody'));
   loadresourcekeyArr.push($.getdata('loadresourcekey'));
@@ -577,7 +575,7 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
   // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
   let Count = ($.getval('shuqiappCount') || '1') - 0;
   for (let i = 2; i <= Count; i++) {
-    if ($.getdata(`loadresourcebody${i}`)) {
+    //if ($.getdata(`loadresourcebody${i}`)) {
       loadresourcebodyArr.push($.getdata(`loadresourcebody${i}`));
       loadresourcekeyArr.push($.getdata(`loadresourcekey${i}`));
       sploadresourcebodyArr.push($.getdata(`sploadresourcebody${i}`));
@@ -603,7 +601,7 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
       lotteryinfourlArr.push($.getdata(`lotteryinfourl${i}`));
       videoinfourlArr.push($.getdata(`videoinfourl${i}`));
       spvideoinfourlArr.push($.getdata(`spvideoinfourl${i}`));
-    }
+    //}
   }
 }
 
@@ -611,14 +609,14 @@ if (process.env.splrb && process.env.splrb.indexOf('#') > -1) {
 
 !(async () => {
   cc = (`${jsname}任务执行通知🔔`);
-  if (typeof $.getdata('loadresourcebody') === "undefined") {
+  if (!loadresourcebodyArr[0]) {
     console.log($.name, '【提示】请先前往获取cookie📲')
     return;
   }
   console.log(`\n✅ 检查共有多少个账号。。。`)
   await $.wait(1000)
   console.log(`👥 本次执行共${loadresourcebodyArr.length}个账号`)
-  for (var i = 0; i < loadresourcebodyArr.length; i++) {
+  for (let i = 0; i < loadresourcebodyArr.length; i++) {
     if (loadresourcebodyArr[i]){
     loadresourcebodyVal = loadresourcebodyArr[i];
     loadresourcekeyVal = loadresourcekeyArr[i];
