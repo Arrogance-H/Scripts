@@ -5,7 +5,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: cookie
+    types: getJDCookie
 jobs:
   build:
 
