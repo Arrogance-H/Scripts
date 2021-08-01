@@ -35,4 +35,4 @@ jobs:
         run: |
           node dsj.js
         env:
-          DSJ_DSJHEADER: ${{ secrets.DSJ_DSJHEADER }}
+          DSJ_dsjHEADER: ${{ secrets.DSJ_dsjHEADER }}
