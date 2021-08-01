@@ -1,4 +1,4 @@
-name: 返利网
+name: 电视家
 
 on:
   workflow_dispatch:
