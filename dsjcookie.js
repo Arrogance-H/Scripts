@@ -1,8 +1,8 @@
-let dsjcookieVal= ``
+let dsjheaderVal= ``
 
 
 let dsjcookie = { 
-      dsjcookieVal: dsjcookieVal,   
+      dsjheaderVal: dsjheaderVal,   
   
 }
 
