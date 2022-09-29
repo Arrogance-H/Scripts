@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3-youth
 # _*_ coding:utf-8 _*_
 
 # 此脚本参考 https://github.com/Sunert/Scripts/blob/master/Task/youth.js
